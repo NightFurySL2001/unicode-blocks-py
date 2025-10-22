@@ -1,6 +1,18 @@
 name: Publish to TestPyPI
 
-on: push
+on: 
+    push:
+    workflow_dispatch:
+        inputs:
+            test-pypi:
+                description: 'Publish to TestPyPI'
+                default: 'true'
+            version:
+                description: 'Unicode version number'
+                required: true
+            dry-run:
+                description: 'Perform a dry run without actual publishing'
+                default: 'true'
 
 jobs:
     build:

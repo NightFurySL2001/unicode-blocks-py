@@ -19,8 +19,8 @@ license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
 [project.urls]
-Homepage = "https://github.com/pypa/sampleproject"
-Issues = "https://github.com/pypa/sampleproject/issues"
+Homepage = "https://github.com/NightFurySL2001/unicode-blocks-py"
+Issues = "https://github.com/NightFurySL2001/unicode-blocks-py/issues"
 
 [build-system]
 requires = ["setuptools >= 77.0.3"]
