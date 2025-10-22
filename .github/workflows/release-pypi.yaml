@@ -4,15 +4,18 @@ on:
     push:
     workflow_dispatch:
         inputs:
-            test-pypi:
-                description: 'Publish to TestPyPI'
-                default: 'true'
             version:
                 description: 'Unicode version number'
                 required: true
+                type: string
             dry-run:
                 description: 'Perform a dry run without actual publishing'
-                default: 'true'
+                default: true
+                type: boolean
+            pypi:
+                description: 'Publish to PyPI'
+                default: false
+                type: boolean
 
 jobs:
     build:
@@ -52,7 +55,7 @@ jobs:
 
         environment:
             name: testpypi
-            url: https://test.pypi.org/p/unicode-blocks
+            url: https://test.pypi.org/p/unicode_blocks
 
         permissions:
             id-token: write # IMPORTANT: mandatory for trusted publishing
