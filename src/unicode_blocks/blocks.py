@@ -4,7 +4,7 @@
 
 from .unicodeBlock import UnicodeBlock
 
-VERSION = '17.0.0'
+__version__ = '17.0.0'
 
 NO_BLOCK = UnicodeBlock(name='No Block', start=-1, end=-1)
 BASIC_LATIN = UnicodeBlock(name='Basic Latin', start=0x0000, end=0x007f, assigned_ranges=[(0x0000, 0x007f)], aliases=['ASCII'])

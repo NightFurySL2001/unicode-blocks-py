@@ -272,7 +272,7 @@ def write_blocks_file(
         f.write(FILE_HEADER)
         f.write("from .unicodeBlock import UnicodeBlock\n\n")
 
-        f.write(f"VERSION = {VERSION!r}\n\n")
+        f.write(f"__version__ = {VERSION!r}\n\n")
 
         # default No_Block
         f.write("NO_BLOCK = UnicodeBlock(name='No Block', start=-1, end=-1)\n")
