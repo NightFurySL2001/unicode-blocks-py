@@ -5,7 +5,7 @@ def bump_version(version_str):
     if version_str.startswith("v"):
         version_str = version_str[1:]
     # Validate and parse semver
-    match = re.match(r'^(\d+)\.(\d+)\.(\d+)$', version_str)
+    match = re.match(r'^(\d+)\.(\d+)\.(\d+)(\+.+)?$', version_str)
     if not match:
         print("Invalid version format. Use MAJOR.MINOR.PATCH")
         sys.exit(1)

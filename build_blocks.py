@@ -34,7 +34,7 @@ with clear_module_root_init():
 # Load the version from pyproject.toml
 pyproject_path = CURRENT_DIR / "pyproject.toml"
 pyproject_data = tomllib.load(open(pyproject_path, "rb"))
-VERSION = pyproject_data["project"]["version"]
+VERSION = pyproject_data["project"]["version"].split("+")[0]  # remove version metadata if any
 
 
 def get_cjk_block_categories(blocks: list[UnicodeBlock]) -> dict[str, list[str]]:
