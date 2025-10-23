@@ -4,7 +4,13 @@
 
 ## Usage
 
-This module interface is heavily inspired by Java [`Character.UnicodeBlock`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.UnicodeBlock.html) class and Rust [`unicode_blocks`](https://docs.rs/unicode-blocks/latest/unicode_blocks/) module.
+Install this package from PyPI:
+
+```sh
+pip install unicode-blocks
+```
+
+The module interface is heavily inspired by Java [`Character.UnicodeBlock`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.UnicodeBlock.html) class and Rust [`unicode_blocks`](https://docs.rs/unicode-blocks/latest/unicode_blocks/) module.
 
 ```py
 import unicode_blocks
@@ -101,6 +107,8 @@ $ python3
 >>> unicode_blocks.__version__
 '17.0.0'
 ```
+
+The version will follow the Unicode semver of the data files, optionally followed by additional numbering from this module for bug fixes after a plus sign, i.e. `<Unicode major.minor.patch>(+<additional numbering>)`.
 
 ## Update
 
