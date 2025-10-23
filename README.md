@@ -1,6 +1,6 @@
 # 🧱 Unicode_Blocks 🧱
 
-`unicode_blocks` is a simple utility module for working with Unicode blocks data. [Unicode blocks](https://www.unicode.org/versions/Unicode16.0.0/core-spec/chapter-3/#G64189) are continuous ranges of code points defined by the Unicode standard, used to group characters with generally similar purposes or origins.
+`unicode_blocks` is a simple utility module for working with Unicode blocks data. [Unicode blocks](https://www.unicode.org/versions/latest/core-spec/chapter-3/#G64189) are continuous ranges of code points defined by the Unicode standard, used to group characters with generally similar purposes or origins.
 
 ## Usage
 
@@ -24,7 +24,8 @@ ascii_block = unicode_blocks.for_name("BASIC_LATIN")
 ascii_block2 = unicode_blocks.for_name("basiclatin")
 ascii_block3 = unicode_blocks.for_name("isBasicLatin")
 ascii_block4 = unicode_blocks.for_name("ASCII") 
-assert ascii_block == ascii_block2 == ascii_block3 == ascii_block4
+from unicode_blocks import BASIC_LATIN
+assert ascii_block == ascii_block2 == ascii_block3 == ascii_block4 == BASIC_LATIN
 
 # Unicode characters currently not assigned will receive No_Block object as per 
 # rule D10b in Section 3.4, *Characters and Encoding*, of Unicode
@@ -50,8 +51,8 @@ assert 'B' in ascii_block.assigned_ranges
 # Example where defined Unicode block range is not fully utilised
 bopo_block = unicode_blocks.of('ㄅ')
 assert len(bopo_block) == 48
-assert len(bopo_block.assigned_ranges) == 43 # first 5 code points should be unassigned, at least in <=16.0
-assert len(bopo_block) != en(bopo_block.assigned_ranges)
+assert len(bopo_block.assigned_ranges) == 43 # first 5 code points should be unassigned, at least in <=17.0
+assert len(bopo_block) != len(bopo_block.assigned_ranges)
 ```
 
 The lists of Unicode block objects are available directly in the namespace, or under the `blocks` module.
@@ -78,7 +79,7 @@ assert cjk.is_japanese_block(blocks.KATAKANA_PHONETIC_EXTENSIONS)
 assert cjk.is_korean_block(blocks.HANGUL_COMPATIBILITY_JAMO)
 ```
 
-> [!WARNING]
+> [!WARNING]  
 > Checking `char in unicode_blocks.for_name("is_CJK")` is **NOT** the same as `cjk.is_cjk(char)`!  
 > `unicode_blocks.for_name("is_CJK")` refers to the "CJK" block alias for CJK Unified Ideographs block, while `cjk.is_cjk` checks through (roughly) all Unicode blocks related to CJK including kana, hangul and punctuations.
 
