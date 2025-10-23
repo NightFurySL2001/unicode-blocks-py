@@ -104,7 +104,9 @@ $ python3
 
 ## Update
 
-To update the blocks data from Unicode Character Database, update the `project.version` key in `pyproject.toml` to the Unicode version number, and then run `python3 build_blocks.py`. This will update the `src/unicode_blocks/blocks.py` file, which is automatically generated from UCD data. 
+To update the blocks data from Unicode Character Database, update the `project.version` key in `pyproject.toml` to the Unicode version number, and then run `python3 build_blocks.py`. This will update the `src/unicode_blocks/blocks.py` file, which is automatically generated from UCD data.
+
+Most of these steps should be directly runnable through GitHub Actions.
 
 ## Contributing
 
@@ -112,7 +114,7 @@ Contributions are welcome! Please follow these steps:
 
 1.  Clone the repository and install as development mode:
     ```sh
-    git clone https://github.com/your-username/unicode-blocks.git
+    git clone https://github.com/NightFurySL2001/unicode-blocks.git
     cd unicode-blocks
     pip install -e .
     ```
