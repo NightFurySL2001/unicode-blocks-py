@@ -131,6 +131,24 @@ class TestGlobals(unittest.TestCase):
         # Check if '中' is not in the assigned range
         self.assertFalse("中" in block.assigned_ranges)
 
+    def test_block_name_normalisation(self):
+        block = unicode_blocks.for_name("basic_latin")
+        self.assertEqual(block, unicode_blocks.BASIC_LATIN)
+        self.assertEqual(block.name, "Basic Latin")
+        self.assertEqual(block.normalised_name, "BASICLATIN")
+        self.assertEqual(block.variable_name, "BASIC_LATIN")
+
+        block = unicode_blocks.for_name("latin_1")
+        self.assertEqual(block, unicode_blocks.LATIN_1_SUPPLEMENT)
+        self.assertEqual(block.name, "Latin-1 Supplement")
+        self.assertEqual(block.normalised_name, "LATIN1SUPPLEMENT")
+        self.assertEqual(block.variable_name, "LATIN_1_SUPPLEMENT")
+
+        block2 = unicode_blocks.for_name("CJK")
+        self.assertEqual(block2.name, "CJK Unified Ideographs")
+        self.assertEqual(block2.normalised_name, "CJKUNIFIEDIDEOGRAPHS")
+        self.assertEqual(block2.variable_name, "CJK_UNIFIED_IDEOGRAPHS")
+
     def test_invalid_cases(self):
         # Code point outside Unicode range
         with self.assertRaises(AssertionError):
