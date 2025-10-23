@@ -41,19 +41,30 @@ jobs:
             - name: Install requirements
               run: pip install -r requirements-dev.txt
 
-            - name: Set version and update blocks.py data file
-              if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version != '' && github.event.inputs.dry-run == false && github.event.inputs.official-publish == false }}
+            - name: Set version and update blocks.py data file [manual run]
+              if: |-
+                ${{ 
+                  github.event_name == 'workflow_dispatch' && 
+                  github.event.inputs.version != '' && 
+                  github.event.inputs.official-publish == false 
+                }}
               run: |
                   python3 bump_pyproject_version.py "${{ github.event.inputs.version }}"
                   python3 build_blocks.py
 
-            - name: Update blocks.py for testing
+            - name: Update blocks.py for testing [on push]
               if: ${{ github.event_name == 'push' }}
               run: |
                   python3 build_blocks.py
 
             - name: Commit version update
-              if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version != '' && github.event.inputs.dry-run == false && github.event.inputs.official-publish == false }}
+              if: |-
+                ${{ 
+                  github.event_name == 'workflow_dispatch' &&
+                  github.event.inputs.version != '' && 
+                  github.event.inputs.official-publish == false && 
+                  github.event.inputs.dry-run == false 
+                }}
               uses: stefanzweifel/git-auto-commit-action@v7
               with:
                   commit_message: "Bump version to ${{ github.event.inputs.version }}"
