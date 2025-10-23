@@ -33,3 +33,23 @@ class TestInternalValidation(unittest.TestCase):
                         f"Overlapping blocks found: {block.name} overlaps with {covered}"
                     )
             covered_ranges.append((start, end))
+
+    def test_block_name_normalisation(self):
+        block = unicode_blocks.for_name("basic_latin")
+        self.assertEqual(block, unicode_blocks.BASIC_LATIN)
+        self.assertEqual(block.name, "Basic Latin")
+        self.assertEqual(block.normalised_name, "BASICLATIN")
+        self.assertEqual(block.variable_name, "BASIC_LATIN")
+        self.assertEqual(block.aliases, ["ASCII"])
+
+        block2 = unicode_blocks.for_name("latin_1")
+        self.assertEqual(block2, unicode_blocks.LATIN_1_SUPPLEMENT)
+        self.assertEqual(block2.name, "Latin-1 Supplement")
+        self.assertEqual(block2.normalised_name, "LATIN1SUPPLEMENT")
+        self.assertEqual(block2.variable_name, "LATIN_1_SUPPLEMENT")
+
+        block3 = unicode_blocks.for_name("CJK")
+        self.assertEqual(block3.name, "CJK Unified Ideographs")
+        self.assertEqual(block3.normalised_name, "CJKUNIFIEDIDEOGRAPHS")
+        self.assertEqual(block3.variable_name, "CJK_UNIFIED_IDEOGRAPHS")
+        self.assertEqual(block3.aliases, ["CJK"])

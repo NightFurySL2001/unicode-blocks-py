@@ -63,6 +63,16 @@ from unicode_blocks import BASIC_LATIN
 from unicode_blocks.blocks import BASIC_LATIN
 ```
 
+Various names are also available in the block:
+
+```py
+from unicode_blocks import BASIC_LATIN
+assert BASIC_LATIN.name == "Basic Latin"  # Official Unicode name as in Blocks.txt
+assert BASIC_LATIN.normalised_name == "BASICLATIN"  # Normalised name under UAX44-LM3
+assert BASIC_LATIN.variable_name == "BASIC_LATIN"  # Variable name in `unicode_blocks.blocks`
+assert BASIC_LATIN.aliases == ["ASCII"]  # Official block aliases as in Blocks.txt
+```
+
 Additional utilities for CJK are specially provided referencing the oxidised version of the module. Selected samples are shown below.
 
 ```py
