@@ -2,6 +2,11 @@ name: Publish to TestPyPI
 
 on:
     push:
+        branches:
+            - main
+    release:
+        # do not run when created/draft, only when finalised
+        types: [published]
     workflow_dispatch:
         inputs:
             version:
@@ -12,8 +17,8 @@ on:
                 description: "Perform a dry run without actual publishing"
                 default: true
                 type: boolean
-            pypi:
-                description: "Publish to PyPI"
+            official-publish:
+                description: "Official publish to PyPI (not TestPyPI)"
                 default: false
                 type: boolean
 
@@ -36,14 +41,14 @@ jobs:
             - name: Install requirements
               run: pip install -r requirements-dev.txt
 
-            - name: Set version and update
-              if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version != '' && github.event.inputs.dry-run == false }}
+            - name: Set version and update blocks.py data file
+              if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version != '' && github.event.inputs.dry-run == false && github.event.inputs.official-publish == false }}
               run: |
                   python3 bump_pyproject_version.py "${{ github.event.inputs.version }}"
                   python3 build_blocks.py
 
             - name: Commit version update
-              if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version != '' && github.event.inputs.dry-run == false }}
+              if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version != '' && github.event.inputs.dry-run == false && github.event.inputs.official-publish == false }}
               uses: stefanzweifel/git-auto-commit-action@v7
               with:
                   commit_message: "Bump version to ${{ github.event.inputs.version }}"
@@ -71,6 +76,7 @@ jobs:
         needs:
             - build
         runs-on: ubuntu-latest
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.official-publish == false && github.event.inputs.dry-run == false }}
 
         environment:
             name: testpypi
@@ -89,3 +95,30 @@ jobs:
               uses: pypa/gh-action-pypi-publish@release/v1
               with:
                   repository-url: https://test.pypi.org/legacy/
+
+    publish-to-pypi:
+        name: Publish official Python distribution to PyPI
+        needs:
+            - build
+        runs-on: ubuntu-latest
+        if: |
+            ${{ 
+              (github.event_name == 'release') || 
+              (github.event_name == 'workflow_dispatch' && github.event.inputs.official-publish == true && github.event.inputs.dry-run == false) 
+            }}
+
+        environment:
+            name: pypi
+            url: https://pypi.org/project/unicode_blocks/
+
+        permissions:
+            id-token: write # IMPORTANT: mandatory for trusted publishing
+
+        steps:
+            - name: Download all the dists
+              uses: actions/download-artifact@v4
+              with:
+                  name: python-package-distributions
+                  path: dist/
+            - name: Publish distribution 📦 to PyPI
+              uses: pypa/gh-action-pypi-publish@release/v1
