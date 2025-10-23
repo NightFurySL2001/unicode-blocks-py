@@ -47,6 +47,11 @@ jobs:
                   python3 bump_pyproject_version.py "${{ github.event.inputs.version }}"
                   python3 build_blocks.py
 
+            - name: Update blocks.py for testing
+              if: ${{ github.event_name == 'push' }}
+              run: |
+                  python3 build_blocks.py
+
             - name: Commit version update
               if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version != '' && github.event.inputs.dry-run == false && github.event.inputs.official-publish == false }}
               uses: stefanzweifel/git-auto-commit-action@v7
@@ -72,11 +77,11 @@ jobs:
                   path: dist/
 
     publish-to-testpypi:
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.official-publish == false && github.event.inputs.dry-run == false }}
         name: Publish Python distribution to Test PyPI
         needs:
             - build
         runs-on: ubuntu-latest
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.official-publish == false && github.event.inputs.dry-run == false }}
 
         environment:
             name: testpypi
@@ -101,7 +106,7 @@ jobs:
         needs:
             - build
         runs-on: ubuntu-latest
-        if: |
+        if: |-
             ${{ 
               (github.event_name == 'release') || 
               (github.event_name == 'workflow_dispatch' && github.event.inputs.official-publish == true && github.event.inputs.dry-run == false) 
