@@ -7,7 +7,7 @@
 Install this package from PyPI:
 
 ```sh
-pip install unicode-blocks
+pip install unicode-blocks-py
 ```
 
 The module interface is heavily inspired by Java [`Character.UnicodeBlock`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.UnicodeBlock.html) class and Rust [`unicode_blocks`](https://docs.rs/unicode-blocks/latest/unicode_blocks/) module.

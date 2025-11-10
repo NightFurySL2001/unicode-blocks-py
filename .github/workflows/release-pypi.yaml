@@ -96,7 +96,7 @@ jobs:
 
         environment:
             name: testpypi
-            url: https://test.pypi.org/p/unicode_blocks
+            url: https://test.pypi.org/p/unicode-blocks-py
 
         permissions:
             id-token: write # IMPORTANT: mandatory for trusted publishing
@@ -125,7 +125,7 @@ jobs:
 
         environment:
             name: pypi
-            url: https://pypi.org/project/unicode_blocks/
+            url: https://pypi.org/project/unicode-blocks-py
 
         permissions:
             id-token: write # IMPORTANT: mandatory for trusted publishing
