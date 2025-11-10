@@ -42,10 +42,9 @@ The module interface is heavily inspired by Java [`Character.UnicodeBlock`](http
 
 # List through all the defined Unicode blocks at the version
 # NO_BLOCK is not in the list of all blocks
->>> for block in unicode_blocks.all(): # doctest: +SKIP
->>>     print(block) # doctest: +SKIP
-# doctest: +ELLIPSIS
-... # will list all blocks here
+>>> for block in unicode_blocks.all():
+...     print(block) # doctest: +ELLIPSIS
+UnicodeBlock(...)
 
 # Pythonic helpers: comparisons between blocks, where earlier blocks is smaller than later blocks
 # useful for sorting a list of UnicodeBlocks
