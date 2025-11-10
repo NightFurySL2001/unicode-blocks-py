@@ -34,7 +34,9 @@ with clear_module_root_init():
 # Load the version from pyproject.toml
 pyproject_path = CURRENT_DIR / "pyproject.toml"
 pyproject_data = tomllib.load(open(pyproject_path, "rb"))
-VERSION = pyproject_data["project"]["version"].split("+")[0]  # remove version metadata if any
+VERSION = pyproject_data["project"]["version"].split("+")[
+    0
+]  # remove version metadata if any
 
 
 def get_cjk_block_categories(blocks: list[UnicodeBlock]) -> dict[str, list[str]]:
@@ -133,10 +135,13 @@ def parse_property_value_aliases(content: str) -> dict[str, list[str]]:
         _, *values = line.split(";")
         official_name = UnicodeBlock.to_variable_name(values[1].strip())
         values.pop(1)  # remove official name
+        if values[0].strip() == "n/a":
+            values.pop(0)  # remove 'n/a' if present for Unicode <= 6.0
         aliases = [alias.strip() for alias in values if alias.strip()]
         # skip if the only alias given is same as official name
-        if len(aliases) == 1 and official_name == UnicodeBlock.to_variable_name(
-            aliases[0]
+        if len(aliases) == 0 or (
+            len(aliases) == 1
+            and official_name == UnicodeBlock.to_variable_name(aliases[0])
         ):
             continue
         property_value_aliases[official_name] = aliases

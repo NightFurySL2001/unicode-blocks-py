@@ -1,4 +1,5 @@
 $versions = @(
+"17.0.0"
 "16.0.0"
 "15.1.0"
 "15.0.0"
@@ -16,8 +17,7 @@ $versions = @(
 "6.1.0"
 "6.0.0"
 "5.2.0"
-"5.1.0"
-"5.0.0") # Replace with your semver versions
+"5.1.0") # Replace with your semver versions
 
 foreach ($version in $versions) {
     echo "Bumping version to $version"
