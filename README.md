@@ -115,9 +115,8 @@ To check which Unicode version data is used, check against the `__version__` var
 ```sh
 $ python3
 >>> import unicode_blocks
->>> unicode_blocks.__version__
+>>> unicode_blocks.__version__  # doctest: +SKIP
 '17.0.0'
-
 ```
 
 The version will follow the Unicode semver of the data files, optionally followed by additional numbering from this module for bug fixes after a plus sign, i.e. `<Unicode major.minor.patch>(+<additional numbering>)`.
