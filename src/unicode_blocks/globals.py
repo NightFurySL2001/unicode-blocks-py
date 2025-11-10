@@ -19,7 +19,6 @@ def for_name(name: str) -> UnicodeBlock:
     for block in blocks:
         if block.normalised_name == UnicodeBlock.normalise_name(name):
             return block
-        print(UnicodeBlock.normalise_name(name))
         if UnicodeBlock.normalise_name(name) in block.aliases:
             return block
     raise InvalidUnicodeBlockNameError(name)
