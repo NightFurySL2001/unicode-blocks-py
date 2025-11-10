@@ -14,7 +14,7 @@ The module interface is heavily inspired by Java [`Character.UnicodeBlock`](http
 
 ```py
 >>> import unicode_blocks
->>> current_major_version = int(unicode_blocks.__version__.split(".")[0])
+>>> unicode_major_version = int(unicode_blocks.__version__.split(".")[0])
 
 # To get Unicode block of a character, input a character string of length 1,
 # UTF-8 encoded bytes, or a positive integer representing a Unicode code point.
@@ -32,7 +32,7 @@ The module interface is heavily inspired by Java [`Character.UnicodeBlock`](http
 >>> ascii_block3 = unicode_blocks.for_name("isBasicLatin")
 >>> from unicode_blocks import BASIC_LATIN
 >>> assert ascii_block == ascii_block2 == ascii_block3 == BASIC_LATIN
->>> if current_major_version >= 6:
+>>> if unicode_major_version >= 6:
 ...     ascii_block4 = unicode_blocks.for_name("ASCII")
 ...     assert ascii_block4 == BASIC_LATIN
 
@@ -62,7 +62,7 @@ UnicodeBlock(...)
 # Example where defined Unicode block range is not fully utilised
 >>> bopo_block = unicode_blocks.of('ㄅ')
 >>> assert len(bopo_block) == 48
->>> bopo_assigned_count = 41 if current_major_version < 10 else 42 if current_major_version == 10 else 43
+>>> bopo_assigned_count = 41 if unicode_major_version < 10 else 42 if unicode_major_version == 10 else 43
 >>> assert len(bopo_block.assigned_ranges) == bopo_assigned_count  # first 5 code points should be unassigned, at least in <=17.0
 >>> assert len(bopo_block) != len(bopo_block.assigned_ranges)
 
@@ -84,7 +84,8 @@ Various names are also available in the block:
 >>> assert BASIC_LATIN.name == "Basic Latin"  # Official Unicode name as in Blocks.txt
 >>> assert BASIC_LATIN.normalised_name == "BASICLATIN"  # Normalised name under UAX44-LM3
 >>> assert BASIC_LATIN.variable_name == "BASIC_LATIN"  # Variable name in `unicode_blocks.blocks`
->>> assert BASIC_LATIN.aliases == ["ASCII"]  # Official block aliases as in PropertyValueAliases.txt
+>>> if unicode_major_version >= 6:
+...     assert BASIC_LATIN.aliases == ["ASCII"]  # Official block aliases as in PropertyValueAliases.txt
 
 ```
 
