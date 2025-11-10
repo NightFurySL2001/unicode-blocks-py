@@ -72,7 +72,7 @@ jobs:
               with:
                   commit_message: "Bump version to ${{ github.event.inputs.version }}"
                   branch: main
-                  file_pattern: |
+                  file_pattern: |-
                       src/unicode_blocks/blocks.py
                       pyproject.toml
 
