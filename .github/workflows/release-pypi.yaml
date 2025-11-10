@@ -27,6 +27,11 @@ jobs:
         name: Build distribution
         runs-on: ubuntu-latest
 
+        permissions:
+            # Give the default GITHUB_TOKEN write permission to commit and push the
+            # added or changed files to the repository.
+            contents: write
+
         steps:
             - uses: actions/checkout@v5
               with:
@@ -40,26 +45,6 @@ jobs:
 
             - name: Install requirements
               run: pip install -r requirements-dev.txt
-            
-            - run: |-
-                set -x
-                echo "github.event_name=${{ github.event_name }}"
-                echo "github.ref=${{ github.ref }}"
-                echo "github.sha=${{ github.sha }}"
-                echo "github.repository=${{ github.repository }}"
-                echo "github.actor=${{ github.actor }}"
-                echo "inputs.version='${{ github.event.inputs.version }}'"
-                echo "inputs.dry-run='${{ github.event.inputs.dry-run }}'"
-                echo "inputs.official-publish='${{ github.event.inputs.official-publish }}'"
-                echo "GITHUB_EVENT_PATH=$GITHUB_EVENT_PATH"
-                if [ -f "$GITHUB_EVENT_PATH" ]; then
-                    echo "Event JSON:"
-                    jq . "$GITHUB_EVENT_PATH" || cat "$GITHUB_EVENT_PATH"
-                else
-                    echo "No GITHUB_EVENT_PATH"
-                fi
-                echo "Environment variables:"
-                env | sort
 
             - name: Set version and update blocks.py data file [manual run]
               if: |-
