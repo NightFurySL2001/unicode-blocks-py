@@ -1,3 +1,6 @@
+"""Unit tests for unicode_blocks globals and functions.
+IMPORTANT: CJK alias to CJK Unified Ideographs only exists since Unicode 6.1.0.
+"""
 import unittest
 
 import unicode_blocks  # installed unicode_blocks Python module
