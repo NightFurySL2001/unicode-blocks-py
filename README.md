@@ -64,7 +64,7 @@ The module interface is heavily inspired by Java [`Character.UnicodeBlock`](http
 >>> bopo_block = unicode_blocks.of('ㄅ')
 >>> assert len(bopo_block) == 48
 >>> bopo_assigned_count = 41 if current_major_version < 10 else 42 if current_major_version == 10 else 43
->>> assert len(bopo_block.assigned_ranges) == 43  # first 5 code points should be unassigned, at least in <=17.0
+>>> assert len(bopo_block.assigned_ranges) == bopo_assigned_count  # first 5 code points should be unassigned, at least in <=17.0
 >>> assert len(bopo_block) != len(bopo_block.assigned_ranges)
 
 ```
