@@ -110,7 +110,7 @@ Additional utilities for CJK are specially provided referencing the oxidised ver
 > Checking `char in unicode_blocks.for_name("is_CJK")` is **NOT** the same as `cjk.is_cjk(char)`!  
 > `unicode_blocks.for_name("is_CJK")` refers to the "CJK" block alias for CJK Unified Ideographs block, while `cjk.is_cjk` checks through (roughly) all Unicode blocks related to CJK including kana, hangul and punctuations.
 
-To check which Unicode version data is used, check against the `__version__` variable in the namespace.
+To check which Unicode version data is used, check against the `__version__` variable in the namespace. (Bug fix release will use `+1` notation)
 
 ```sh
 $ python3

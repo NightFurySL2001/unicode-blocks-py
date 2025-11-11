@@ -34,9 +34,8 @@ with clear_module_root_init():
 # Load the version from pyproject.toml
 pyproject_path = CURRENT_DIR / "pyproject.toml"
 pyproject_data = tomllib.load(open(pyproject_path, "rb"))
-VERSION = pyproject_data["project"]["version"].split("+")[
-    0
-]  # remove version metadata if any
+VERSION_UNIQUE = pyproject_data["project"]["version"]
+VERSION = VERSION_UNIQUE.split("+")[0]  # remove version metadata if any
 
 
 def get_cjk_block_categories(blocks: list[UnicodeBlock]) -> dict[str, list[str]]:
@@ -277,7 +276,7 @@ def write_blocks_file(
         f.write(FILE_HEADER)
         f.write("from .unicodeBlock import UnicodeBlock\n\n")
 
-        f.write(f"__version__ = {VERSION!r}\n\n")
+        f.write(f"__version__ = {VERSION_UNIQUE!r}\n\n")
 
         # default No_Block
         f.write("NO_BLOCK = UnicodeBlock(name='No Block', start=-1, end=-1)\n")
