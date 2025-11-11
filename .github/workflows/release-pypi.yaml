@@ -5,8 +5,8 @@ run-name: |-
             format(
                 'Publish v{0} to {1} {2}', 
                 inputs.version,
-                (inputs.official-publish == 'true' && 'PyPI' || 'TestPyPI'),
-                (inputs.dry-run == 'true' && '(dry run)' || inputs.dry-run == true && '(dry run2)' || '')
+                (inputs.official-publish == true && 'PyPI' || 'TestPyPI'),
+                (inputs.dry-run == true && '(dry run)' || '')
             ) ||
         github.event_name == 'release' && 
             format('Publish official release v{0} to PyPI' , github.event.release.tag_name) ||
@@ -61,11 +61,11 @@ jobs:
               if: |-
                   ${{ 
                     github.event_name == 'workflow_dispatch' && 
-                    github.event.inputs.version != '' && 
-                    github.event.inputs.official-publish == 'false' 
+                    inputs.version != '' && 
+                    inputs.official-publish == false
                   }}
               run: |
-                  python3 bump_pyproject_version.py "${{ github.event.inputs.version }}"
+                  python3 bump_pyproject_version.py "${{ inputs.version }}"
                   python3 build_blocks.py
 
             - name: Update blocks.py for testing [on push]
@@ -77,13 +77,13 @@ jobs:
               if: |-
                   ${{ 
                     github.event_name == 'workflow_dispatch' &&
-                    github.event.inputs.version != '' && 
-                    github.event.inputs.official-publish == 'false' && 
-                    github.event.inputs.dry-run == 'false' 
+                    inputs.version != '' && 
+                    inputs.official-publish == false && 
+                    inputs.dry-run == false 
                   }}
               uses: stefanzweifel/git-auto-commit-action@v7
               with:
-                  commit_message: "Bump version to ${{ github.event.inputs.version }}"
+                  commit_message: "Bump version to ${{ inputs.version }}"
                   branch: main
                   file_pattern: "pyproject.toml src/unicode_blocks/blocks.py"
 
@@ -103,7 +103,7 @@ jobs:
                   path: dist/
 
     publish-to-testpypi:
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.official-publish == 'false' && github.event.inputs.dry-run == 'false' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.official-publish == false && inputs.dry-run == false }}
         name: Publish Python distribution to Test PyPI
         needs:
             - build
@@ -136,7 +136,7 @@ jobs:
         if: |-
             ${{ 
               (github.event_name == 'release') || 
-              (github.event_name == 'workflow_dispatch' && github.event.inputs.official-publish == 'true' && github.event.inputs.dry-run == 'false') 
+              (github.event_name == 'workflow_dispatch' && inputs.official-publish == true && inputs.dry-run == false) 
             }}
 
         environment:
