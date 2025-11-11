@@ -1,5 +1,17 @@
 name: Publish module to PyPI
-run-name: Publish v${{ inputs.version }} to ${{ inputs.official-publish == 'true' && 'PyPI' || 'TestPyPI' }} ${{ inputs.dry-run == 'true' && '(dry run)' || '' }}
+run-name: |-
+    ${{ 
+        github.event_name == "workflow_dispatch" && 
+            format(
+                "Publish v{0} to {1} {2}", 
+                 inputs.version ,
+                 (inputs.official-publish == 'true' && 'PyPI' || 'TestPyPI') ,
+                 inputs.dry-run == 'true' && '(dry run)' || '',
+            ) ||
+        github.event_name == "release" && 
+        "Publish official release v${{ github.event.release.tag_name }} to PyPI" ||
+        github.event.push.head_commit.message
+    }}
 
 on:
     push:
@@ -47,11 +59,11 @@ jobs:
 
             - name: Set version and update blocks.py data file [manual run]
               if: |-
-                ${{ 
-                  github.event_name == 'workflow_dispatch' && 
-                  github.event.inputs.version != '' && 
-                  github.event.inputs.official-publish == 'false' 
-                }}
+                  ${{ 
+                    github.event_name == 'workflow_dispatch' && 
+                    github.event.inputs.version != '' && 
+                    github.event.inputs.official-publish == 'false' 
+                  }}
               run: |
                   python3 bump_pyproject_version.py "${{ github.event.inputs.version }}"
                   python3 build_blocks.py
@@ -63,12 +75,12 @@ jobs:
 
             - name: Commit version update
               if: |-
-                ${{ 
-                  github.event_name == 'workflow_dispatch' &&
-                  github.event.inputs.version != '' && 
-                  github.event.inputs.official-publish == 'false' && 
-                  github.event.inputs.dry-run == 'false' 
-                }}
+                  ${{ 
+                    github.event_name == 'workflow_dispatch' &&
+                    github.event.inputs.version != '' && 
+                    github.event.inputs.official-publish == 'false' && 
+                    github.event.inputs.dry-run == 'false' 
+                  }}
               uses: stefanzweifel/git-auto-commit-action@v7
               with:
                   commit_message: "Bump version to ${{ github.event.inputs.version }}"
