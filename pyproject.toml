@@ -1,6 +1,6 @@
 [project]
 name = "unicode-blocks-py"
-version = "6.1.0+2"
+version = "6.1.0"
 authors = [
   { name="NightFurySL2001", email="nfsl-fonts@outlook.com" },
 ]
