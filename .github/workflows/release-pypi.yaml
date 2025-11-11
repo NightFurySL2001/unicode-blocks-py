@@ -9,7 +9,7 @@ run-name: |-
                  inputs.dry-run == 'true' && '(dry run)' || '',
             ) ||
         github.event_name == "release" && 
-        "Publish official release v${{ github.event.release.tag_name }} to PyPI" ||
+            format("Publish official release v{0} to PyPI" , github.event.release.tag_name) ||
         github.event.push.head_commit.message
     }}
 
