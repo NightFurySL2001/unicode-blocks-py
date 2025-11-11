@@ -4,9 +4,9 @@ run-name: |-
         github.event_name == 'workflow_dispatch' && 
             format(
                 'Publish v{0} to {1} {2}', 
-                 inputs.version,
-                 (inputs.official-publish == 'true' && 'PyPI' || 'TestPyPI'),
-                 (inputs.dry-run == 'true' && '(dry run)' || '')
+                inputs.version,
+                (inputs.official-publish == 'true' && 'PyPI' || 'TestPyPI'),
+                (inputs.dry-run == 'true' && '(dry run)' || inputs.dry-run == true && '(dry run2)' || '')
             ) ||
         github.event_name == 'release' && 
             format('Publish official release v{0} to PyPI' , github.event.release.tag_name) ||
