@@ -1,4 +1,5 @@
-name: Publish to TestPyPI
+name: Publish module to PyPI
+run-name: Publish v${{ inputs.version }} to ${{ inputs.official-publish == 'true' && 'PyPI' || 'TestPyPI' }} ${{ inputs.dry-run == 'true' && '(dry run)' || '' }}
 
 on:
     push:
