@@ -10,7 +10,7 @@ run-name: |-
             ) ||
         github.event_name == 'release' && 
             format('Publish official release v{0} to PyPI' , github.event.release.tag_name) ||
-        github.event.push.head_commit.message
+        github.event.head_commit.message
     }}
 
 on:
