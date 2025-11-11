@@ -4,7 +4,7 @@
 
 from .unicodeBlock import UnicodeBlock
 
-__version__ = '6.2.0'
+__version__ = '6.3.0'
 
 NO_BLOCK = UnicodeBlock(name='No Block', start=-1, end=-1)
 BASIC_LATIN = UnicodeBlock(name='Basic Latin', start=0x0000, end=0x007f, assigned_ranges=[(0x0000, 0x007f)], aliases=['ASCII'])
@@ -19,7 +19,7 @@ CYRILLIC = UnicodeBlock(name='Cyrillic', start=0x0400, end=0x04ff, assigned_rang
 CYRILLIC_SUPPLEMENT = UnicodeBlock(name='Cyrillic Supplement', start=0x0500, end=0x052f, assigned_ranges=[(0x0500, 0x0527)], aliases=['Cyrillic_Sup', 'Cyrillic_Supplementary'])
 ARMENIAN = UnicodeBlock(name='Armenian', start=0x0530, end=0x058f, assigned_ranges=[(0x0531, 0x0556), (0x0559, 0x055f), (0x0561, 0x0587), (0x0589, 0x058a), (0x058f, 0x058f)])
 HEBREW = UnicodeBlock(name='Hebrew', start=0x0590, end=0x05ff, assigned_ranges=[(0x0591, 0x05c7), (0x05d0, 0x05ea), (0x05f0, 0x05f4)])
-ARABIC = UnicodeBlock(name='Arabic', start=0x0600, end=0x06ff, assigned_ranges=[(0x0600, 0x0604), (0x0606, 0x061b), (0x061e, 0x06ff)])
+ARABIC = UnicodeBlock(name='Arabic', start=0x0600, end=0x06ff, assigned_ranges=[(0x0600, 0x0604), (0x0606, 0x061c), (0x061e, 0x06ff)])
 SYRIAC = UnicodeBlock(name='Syriac', start=0x0700, end=0x074f, assigned_ranges=[(0x0700, 0x070d), (0x070f, 0x074a), (0x074d, 0x074f)])
 ARABIC_SUPPLEMENT = UnicodeBlock(name='Arabic Supplement', start=0x0750, end=0x077f, assigned_ranges=[(0x0750, 0x077f)], aliases=['Arabic_Sup'])
 THAANA = UnicodeBlock(name='Thaana', start=0x0780, end=0x07bf, assigned_ranges=[(0x0780, 0x07b1)])
@@ -74,7 +74,7 @@ PHONETIC_EXTENSIONS_SUPPLEMENT = UnicodeBlock(name='Phonetic Extensions Suppleme
 COMBINING_DIACRITICAL_MARKS_SUPPLEMENT = UnicodeBlock(name='Combining Diacritical Marks Supplement', start=0x1dc0, end=0x1dff, assigned_ranges=[(0x1dc0, 0x1de6), (0x1dfc, 0x1dff)], aliases=['Diacriticals_Sup'])
 LATIN_EXTENDED_ADDITIONAL = UnicodeBlock(name='Latin Extended Additional', start=0x1e00, end=0x1eff, assigned_ranges=[(0x1e00, 0x1eff)], aliases=['Latin_Ext_Additional'])
 GREEK_EXTENDED = UnicodeBlock(name='Greek Extended', start=0x1f00, end=0x1fff, assigned_ranges=[(0x1f00, 0x1f15), (0x1f18, 0x1f1d), (0x1f20, 0x1f45), (0x1f48, 0x1f4d), (0x1f50, 0x1f57), (0x1f59, 0x1f59), (0x1f5b, 0x1f5b), (0x1f5d, 0x1f5d), (0x1f5f, 0x1f7d), (0x1f80, 0x1fb4), (0x1fb6, 0x1fc4), (0x1fc6, 0x1fd3), (0x1fd6, 0x1fdb), (0x1fdd, 0x1fef), (0x1ff2, 0x1ff4), (0x1ff6, 0x1ffe)], aliases=['Greek_Ext'])
-GENERAL_PUNCTUATION = UnicodeBlock(name='General Punctuation', start=0x2000, end=0x206f, assigned_ranges=[(0x2000, 0x2064), (0x206a, 0x206f)], aliases=['Punctuation'])
+GENERAL_PUNCTUATION = UnicodeBlock(name='General Punctuation', start=0x2000, end=0x206f, assigned_ranges=[(0x2000, 0x2064), (0x2066, 0x206f)], aliases=['Punctuation'])
 SUPERSCRIPTS_AND_SUBSCRIPTS = UnicodeBlock(name='Superscripts and Subscripts', start=0x2070, end=0x209f, assigned_ranges=[(0x2070, 0x2071), (0x2074, 0x208e), (0x2090, 0x209c)], aliases=['Super_And_Sub'])
 CURRENCY_SYMBOLS = UnicodeBlock(name='Currency Symbols', start=0x20a0, end=0x20cf, assigned_ranges=[(0x20a0, 0x20ba)])
 COMBINING_DIACRITICAL_MARKS_FOR_SYMBOLS = UnicodeBlock(name='Combining Diacritical Marks for Symbols', start=0x20d0, end=0x20ff, assigned_ranges=[(0x20d0, 0x20f0)], aliases=['Diacriticals_For_Symbols', 'Combining_Marks_For_Symbols'])
