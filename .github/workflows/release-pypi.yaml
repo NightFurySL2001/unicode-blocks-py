@@ -1,5 +1,6 @@
 name: Publish module to PyPI
 run-name: |-
+    ${{ github.event_name }} -
     ${{ 
         github.event_name == 'workflow_dispatch' && 
             format(
