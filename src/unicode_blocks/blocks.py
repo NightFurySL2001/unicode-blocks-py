@@ -4,7 +4,7 @@
 
 from .unicodeBlock import UnicodeBlock
 
-__version__ = '6.1.0'
+__version__ = '6.2.0'
 
 NO_BLOCK = UnicodeBlock(name='No Block', start=-1, end=-1)
 BASIC_LATIN = UnicodeBlock(name='Basic Latin', start=0x0000, end=0x007f, assigned_ranges=[(0x0000, 0x007f)], aliases=['ASCII'])
@@ -76,7 +76,7 @@ LATIN_EXTENDED_ADDITIONAL = UnicodeBlock(name='Latin Extended Additional', start
 GREEK_EXTENDED = UnicodeBlock(name='Greek Extended', start=0x1f00, end=0x1fff, assigned_ranges=[(0x1f00, 0x1f15), (0x1f18, 0x1f1d), (0x1f20, 0x1f45), (0x1f48, 0x1f4d), (0x1f50, 0x1f57), (0x1f59, 0x1f59), (0x1f5b, 0x1f5b), (0x1f5d, 0x1f5d), (0x1f5f, 0x1f7d), (0x1f80, 0x1fb4), (0x1fb6, 0x1fc4), (0x1fc6, 0x1fd3), (0x1fd6, 0x1fdb), (0x1fdd, 0x1fef), (0x1ff2, 0x1ff4), (0x1ff6, 0x1ffe)], aliases=['Greek_Ext'])
 GENERAL_PUNCTUATION = UnicodeBlock(name='General Punctuation', start=0x2000, end=0x206f, assigned_ranges=[(0x2000, 0x2064), (0x206a, 0x206f)], aliases=['Punctuation'])
 SUPERSCRIPTS_AND_SUBSCRIPTS = UnicodeBlock(name='Superscripts and Subscripts', start=0x2070, end=0x209f, assigned_ranges=[(0x2070, 0x2071), (0x2074, 0x208e), (0x2090, 0x209c)], aliases=['Super_And_Sub'])
-CURRENCY_SYMBOLS = UnicodeBlock(name='Currency Symbols', start=0x20a0, end=0x20cf, assigned_ranges=[(0x20a0, 0x20b9)])
+CURRENCY_SYMBOLS = UnicodeBlock(name='Currency Symbols', start=0x20a0, end=0x20cf, assigned_ranges=[(0x20a0, 0x20ba)])
 COMBINING_DIACRITICAL_MARKS_FOR_SYMBOLS = UnicodeBlock(name='Combining Diacritical Marks for Symbols', start=0x20d0, end=0x20ff, assigned_ranges=[(0x20d0, 0x20f0)], aliases=['Diacriticals_For_Symbols', 'Combining_Marks_For_Symbols'])
 LETTERLIKE_SYMBOLS = UnicodeBlock(name='Letterlike Symbols', start=0x2100, end=0x214f, assigned_ranges=[(0x2100, 0x214f)])
 NUMBER_FORMS = UnicodeBlock(name='Number Forms', start=0x2150, end=0x218f, assigned_ranges=[(0x2150, 0x2189)])
