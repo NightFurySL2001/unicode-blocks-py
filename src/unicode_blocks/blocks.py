@@ -4,7 +4,7 @@
 
 from .unicodeBlock import UnicodeBlock
 
-__version__ = '12.0.0'
+__version__ = '12.1.0'
 
 NO_BLOCK = UnicodeBlock(name='No Block', start=-1, end=-1)
 BASIC_LATIN = UnicodeBlock(name='Basic Latin', start=0x0000, end=0x007f, assigned_ranges=[(0x0000, 0x007f)], aliases=['ASCII'])
@@ -122,7 +122,7 @@ KANBUN = UnicodeBlock(name='Kanbun', start=0x3190, end=0x319f, assigned_ranges=[
 BOPOMOFO_EXTENDED = UnicodeBlock(name='Bopomofo Extended', start=0x31a0, end=0x31bf, assigned_ranges=[(0x31a0, 0x31ba)], aliases=['Bopomofo_Ext'])
 CJK_STROKES = UnicodeBlock(name='CJK Strokes', start=0x31c0, end=0x31ef, assigned_ranges=[(0x31c0, 0x31e3)])
 KATAKANA_PHONETIC_EXTENSIONS = UnicodeBlock(name='Katakana Phonetic Extensions', start=0x31f0, end=0x31ff, assigned_ranges=[(0x31f0, 0x31ff)], aliases=['Katakana_Ext'])
-ENCLOSED_CJK_LETTERS_AND_MONTHS = UnicodeBlock(name='Enclosed CJK Letters and Months', start=0x3200, end=0x32ff, assigned_ranges=[(0x3200, 0x321e), (0x3220, 0x32fe)], aliases=['Enclosed_CJK'])
+ENCLOSED_CJK_LETTERS_AND_MONTHS = UnicodeBlock(name='Enclosed CJK Letters and Months', start=0x3200, end=0x32ff, assigned_ranges=[(0x3200, 0x321e), (0x3220, 0x32ff)], aliases=['Enclosed_CJK'])
 CJK_COMPATIBILITY = UnicodeBlock(name='CJK Compatibility', start=0x3300, end=0x33ff, assigned_ranges=[(0x3300, 0x33ff)], aliases=['CJK_Compat'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A = UnicodeBlock(name='CJK Unified Ideographs Extension A', start=0x3400, end=0x4dbf, assigned_ranges=[(0x3400, 0x4db5)], aliases=['CJK_Ext_A'])
 YIJING_HEXAGRAM_SYMBOLS = UnicodeBlock(name='Yijing Hexagram Symbols', start=0x4dc0, end=0x4dff, assigned_ranges=[(0x4dc0, 0x4dff)], aliases=['Yijing'])
