@@ -72,9 +72,7 @@ jobs:
               with:
                   commit_message: "Bump version to ${{ github.event.inputs.version }}"
                   branch: main
-                  file_pattern: |-
-                      src/unicode_blocks/blocks.py
-                      pyproject.toml
+                  file_pattern: "pyproject.toml src/unicode_blocks/blocks.py"
 
             - name: Build the binary wheel and source tarball
               run: python3 -m build
