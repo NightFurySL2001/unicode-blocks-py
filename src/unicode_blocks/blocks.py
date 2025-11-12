@@ -4,7 +4,7 @@
 
 from .unicodeBlock import UnicodeBlock
 
-__version__ = '15.0.0'
+__version__ = '15.1.0'
 
 NO_BLOCK = UnicodeBlock(name='No Block', start=-1, end=-1)
 BASIC_LATIN = UnicodeBlock(name='Basic Latin', start=0x0000, end=0x007f, assigned_ranges=[(0x0000, 0x007f)], aliases=['ASCII'])
@@ -113,7 +113,7 @@ CYRILLIC_EXTENDED_A = UnicodeBlock(name='Cyrillic Extended-A', start=0x2de0, end
 SUPPLEMENTAL_PUNCTUATION = UnicodeBlock(name='Supplemental Punctuation', start=0x2e00, end=0x2e7f, assigned_ranges=[(0x2e00, 0x2e5d)], aliases=['Sup_Punctuation'])
 CJK_RADICALS_SUPPLEMENT = UnicodeBlock(name='CJK Radicals Supplement', start=0x2e80, end=0x2eff, assigned_ranges=[(0x2e80, 0x2e99), (0x2e9b, 0x2ef3)], aliases=['CJK_Radicals_Sup'])
 KANGXI_RADICALS = UnicodeBlock(name='Kangxi Radicals', start=0x2f00, end=0x2fdf, assigned_ranges=[(0x2f00, 0x2fd5)], aliases=['Kangxi'])
-IDEOGRAPHIC_DESCRIPTION_CHARACTERS = UnicodeBlock(name='Ideographic Description Characters', start=0x2ff0, end=0x2fff, assigned_ranges=[(0x2ff0, 0x2ffb)], aliases=['IDC'])
+IDEOGRAPHIC_DESCRIPTION_CHARACTERS = UnicodeBlock(name='Ideographic Description Characters', start=0x2ff0, end=0x2fff, assigned_ranges=[(0x2ff0, 0x2fff)], aliases=['IDC'])
 CJK_SYMBOLS_AND_PUNCTUATION = UnicodeBlock(name='CJK Symbols and Punctuation', start=0x3000, end=0x303f, assigned_ranges=[(0x3000, 0x303f)], aliases=['CJK_Symbols'])
 HIRAGANA = UnicodeBlock(name='Hiragana', start=0x3040, end=0x309f, assigned_ranges=[(0x3041, 0x3096), (0x3099, 0x309f)])
 KATAKANA = UnicodeBlock(name='Katakana', start=0x30a0, end=0x30ff, assigned_ranges=[(0x30a0, 0x30ff)])
@@ -121,7 +121,7 @@ BOPOMOFO = UnicodeBlock(name='Bopomofo', start=0x3100, end=0x312f, assigned_rang
 HANGUL_COMPATIBILITY_JAMO = UnicodeBlock(name='Hangul Compatibility Jamo', start=0x3130, end=0x318f, assigned_ranges=[(0x3131, 0x318e)], aliases=['Compat_Jamo'])
 KANBUN = UnicodeBlock(name='Kanbun', start=0x3190, end=0x319f, assigned_ranges=[(0x3190, 0x319f)])
 BOPOMOFO_EXTENDED = UnicodeBlock(name='Bopomofo Extended', start=0x31a0, end=0x31bf, assigned_ranges=[(0x31a0, 0x31bf)], aliases=['Bopomofo_Ext'])
-CJK_STROKES = UnicodeBlock(name='CJK Strokes', start=0x31c0, end=0x31ef, assigned_ranges=[(0x31c0, 0x31e3)])
+CJK_STROKES = UnicodeBlock(name='CJK Strokes', start=0x31c0, end=0x31ef, assigned_ranges=[(0x31c0, 0x31e3), (0x31ef, 0x31ef)])
 KATAKANA_PHONETIC_EXTENSIONS = UnicodeBlock(name='Katakana Phonetic Extensions', start=0x31f0, end=0x31ff, assigned_ranges=[(0x31f0, 0x31ff)], aliases=['Katakana_Ext'])
 ENCLOSED_CJK_LETTERS_AND_MONTHS = UnicodeBlock(name='Enclosed CJK Letters and Months', start=0x3200, end=0x32ff, assigned_ranges=[(0x3200, 0x321e), (0x3220, 0x32ff)], aliases=['Enclosed_CJK'])
 CJK_COMPATIBILITY = UnicodeBlock(name='CJK Compatibility', start=0x3300, end=0x33ff, assigned_ranges=[(0x3300, 0x33ff)], aliases=['CJK_Compat'])
@@ -327,6 +327,7 @@ CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C = UnicodeBlock(name='CJK Unified Ideographs E
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D = UnicodeBlock(name='CJK Unified Ideographs Extension D', start=0x2b740, end=0x2b81f, assigned_ranges=[(0x2b740, 0x2b81d)], aliases=['CJK_Ext_D'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E = UnicodeBlock(name='CJK Unified Ideographs Extension E', start=0x2b820, end=0x2ceaf, assigned_ranges=[(0x2b820, 0x2cea1)], aliases=['CJK_Ext_E'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F = UnicodeBlock(name='CJK Unified Ideographs Extension F', start=0x2ceb0, end=0x2ebef, assigned_ranges=[(0x2ceb0, 0x2ebe0)], aliases=['CJK_Ext_F'])
+CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I = UnicodeBlock(name='CJK Unified Ideographs Extension I', start=0x2ebf0, end=0x2ee5f, assigned_ranges=[(0x2ebf0, 0x2ee5d)], aliases=['CJK_Ext_I'])
 CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT = UnicodeBlock(name='CJK Compatibility Ideographs Supplement', start=0x2f800, end=0x2fa1f, assigned_ranges=[(0x2f800, 0x2fa1d)], aliases=['CJK_Compat_Ideographs_Sup'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G = UnicodeBlock(name='CJK Unified Ideographs Extension G', start=0x30000, end=0x3134f, assigned_ranges=[(0x30000, 0x3134a)], aliases=['CJK_Ext_G'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H = UnicodeBlock(name='CJK Unified Ideographs Extension H', start=0x31350, end=0x323af, assigned_ranges=[(0x31350, 0x323af)], aliases=['CJK_Ext_H'])
@@ -656,6 +657,7 @@ ALL_BLOCKS = [
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F,
+    CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I,
     CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H,
@@ -677,6 +679,7 @@ IDEO_BLOCKS = [
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F,
+    CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H,
 ]
