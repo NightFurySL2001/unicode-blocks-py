@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 from functools import total_ordering
-from typing import Optional
+from typing import Optional, NamedTuple
+from itertools import chain
 
 from .charNormaliser import CharNormaliser
 
@@ -19,7 +20,9 @@ class UnicodeBlock:
         self.name = name
         self.start = start
         self.end = end
-        self.assigned_ranges = AssignedRanges(assigned_ranges) if assigned_ranges else []
+        self.assigned_ranges = (
+            AssignedRanges(assigned_ranges) if assigned_ranges else AssignedRanges([])
+        )
         self.aliases = [self.normalise_name(a) for a in aliases] if aliases else []
 
     @property
@@ -60,7 +63,16 @@ class UnicodeBlock:
         ]
 
         if self.assigned_ranges:
-            ranges_str = [f"({start:#06x}, {end:#06x})" for start, end in self.assigned_ranges]
+            if isinstance(self.assigned_ranges, list):
+                ranges_str = [
+                    f"({start:#06x}, {end:#06x})"
+                    for start, end in self.assigned_ranges # pyright: ignore[reportGeneralTypeIssues]
+                ]
+            else:
+                ranges_str = [
+                    f"({start:#06x}, {end:#06x})"
+                    for start, end in self.assigned_ranges.ranges
+                ]
             parts.append(f"assigned_ranges=[{', '.join(ranges_str)}]")
 
         if self.aliases:
@@ -85,24 +97,33 @@ class UnicodeBlock:
         """Normalise the variable name of a Unicode block."""
         return name.upper().replace(" ", "_").replace("-", "_")
 
+
+class Range(NamedTuple):
+    start: int
+    end: int
+
+
 class AssignedRanges:
     """A class to represent assigned ranges within a Unicode block."""
-    
+
     def __init__(self, ranges: list[tuple[int, int]]):
-        self.ranges = ranges
+        self.ranges = [Range(start, end) for start, end in ranges]
 
     def __iter__(self):
-        return iter(self.ranges)
+        return chain.from_iterable((range(start, end + 1) for start, end in self.ranges))
 
     def __repr__(self) -> str:
         return f"AssignedRanges({self.ranges})"
-    
+
     def __len__(self) -> int:
         """Return the number of assigned ranges."""
         if self.ranges is None:
             return 0
         return sum(end - start + 1 for start, end in self.ranges)
-    
+
+    def __bool__(self) -> bool:
+        return bool(self.ranges)
+
     def __contains__(self, char: str | int | bytes) -> bool:
         """Check if a character is in any of the assigned ranges."""
         unidec = CharNormaliser.to_codepoint(char)

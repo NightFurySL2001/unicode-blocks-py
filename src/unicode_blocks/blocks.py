@@ -4,7 +4,7 @@
 
 from .unicodeBlock import UnicodeBlock
 
-__version__ = '17.0.0'
+__version__ = '18.0.0'
 
 NO_BLOCK = UnicodeBlock(name='No Block', start=-1, end=-1)
 BASIC_LATIN = UnicodeBlock(name='Basic Latin', start=0x0000, end=0x007f, assigned_ranges=[(0x0000, 0x007f)], aliases=['ASCII'])
@@ -17,8 +17,8 @@ COMBINING_DIACRITICAL_MARKS = UnicodeBlock(name='Combining Diacritical Marks', s
 GREEK_AND_COPTIC = UnicodeBlock(name='Greek and Coptic', start=0x0370, end=0x03ff, assigned_ranges=[(0x0370, 0x0377), (0x037a, 0x037f), (0x0384, 0x038a), (0x038c, 0x038c), (0x038e, 0x03a1), (0x03a3, 0x03ff)], aliases=['Greek'])
 CYRILLIC = UnicodeBlock(name='Cyrillic', start=0x0400, end=0x04ff, assigned_ranges=[(0x0400, 0x04ff)])
 CYRILLIC_SUPPLEMENT = UnicodeBlock(name='Cyrillic Supplement', start=0x0500, end=0x052f, assigned_ranges=[(0x0500, 0x052f)], aliases=['Cyrillic_Sup', 'Cyrillic_Supplementary'])
-ARMENIAN = UnicodeBlock(name='Armenian', start=0x0530, end=0x058f, assigned_ranges=[(0x0531, 0x0556), (0x0559, 0x058a), (0x058d, 0x058f)])
-HEBREW = UnicodeBlock(name='Hebrew', start=0x0590, end=0x05ff, assigned_ranges=[(0x0591, 0x05c7), (0x05d0, 0x05ea), (0x05ef, 0x05f4)])
+ARMENIAN = UnicodeBlock(name='Armenian', start=0x0530, end=0x058f, assigned_ranges=[(0x0531, 0x0556), (0x0558, 0x058f)])
+HEBREW = UnicodeBlock(name='Hebrew', start=0x0590, end=0x05ff, assigned_ranges=[(0x0591, 0x05c9), (0x05d0, 0x05ea), (0x05ef, 0x05f4)])
 ARABIC = UnicodeBlock(name='Arabic', start=0x0600, end=0x06ff, assigned_ranges=[(0x0600, 0x06ff)])
 SYRIAC = UnicodeBlock(name='Syriac', start=0x0700, end=0x074f, assigned_ranges=[(0x0700, 0x070d), (0x070f, 0x074a), (0x074d, 0x074f)])
 ARABIC_SUPPLEMENT = UnicodeBlock(name='Arabic Supplement', start=0x0750, end=0x077f, assigned_ranges=[(0x0750, 0x077f)], aliases=['Arabic_Sup'])
@@ -33,7 +33,7 @@ DEVANAGARI = UnicodeBlock(name='Devanagari', start=0x0900, end=0x097f, assigned_
 BENGALI = UnicodeBlock(name='Bengali', start=0x0980, end=0x09ff, assigned_ranges=[(0x0980, 0x0983), (0x0985, 0x098c), (0x098f, 0x0990), (0x0993, 0x09a8), (0x09aa, 0x09b0), (0x09b2, 0x09b2), (0x09b6, 0x09b9), (0x09bc, 0x09c4), (0x09c7, 0x09c8), (0x09cb, 0x09ce), (0x09d7, 0x09d7), (0x09dc, 0x09dd), (0x09df, 0x09e3), (0x09e6, 0x09fe)])
 GURMUKHI = UnicodeBlock(name='Gurmukhi', start=0x0a00, end=0x0a7f, assigned_ranges=[(0x0a01, 0x0a03), (0x0a05, 0x0a0a), (0x0a0f, 0x0a10), (0x0a13, 0x0a28), (0x0a2a, 0x0a30), (0x0a32, 0x0a33), (0x0a35, 0x0a36), (0x0a38, 0x0a39), (0x0a3c, 0x0a3c), (0x0a3e, 0x0a42), (0x0a47, 0x0a48), (0x0a4b, 0x0a4d), (0x0a51, 0x0a51), (0x0a59, 0x0a5c), (0x0a5e, 0x0a5e), (0x0a66, 0x0a76)])
 GUJARATI = UnicodeBlock(name='Gujarati', start=0x0a80, end=0x0aff, assigned_ranges=[(0x0a81, 0x0a83), (0x0a85, 0x0a8d), (0x0a8f, 0x0a91), (0x0a93, 0x0aa8), (0x0aaa, 0x0ab0), (0x0ab2, 0x0ab3), (0x0ab5, 0x0ab9), (0x0abc, 0x0ac5), (0x0ac7, 0x0ac9), (0x0acb, 0x0acd), (0x0ad0, 0x0ad0), (0x0ae0, 0x0ae3), (0x0ae6, 0x0af1), (0x0af9, 0x0aff)])
-ORIYA = UnicodeBlock(name='Oriya', start=0x0b00, end=0x0b7f, assigned_ranges=[(0x0b01, 0x0b03), (0x0b05, 0x0b0c), (0x0b0f, 0x0b10), (0x0b13, 0x0b28), (0x0b2a, 0x0b30), (0x0b32, 0x0b33), (0x0b35, 0x0b39), (0x0b3c, 0x0b44), (0x0b47, 0x0b48), (0x0b4b, 0x0b4d), (0x0b55, 0x0b57), (0x0b5c, 0x0b5d), (0x0b5f, 0x0b63), (0x0b66, 0x0b77)])
+ORIYA = UnicodeBlock(name='Oriya', start=0x0b00, end=0x0b7f, assigned_ranges=[(0x0b01, 0x0b03), (0x0b05, 0x0b0c), (0x0b0f, 0x0b10), (0x0b13, 0x0b28), (0x0b2a, 0x0b30), (0x0b32, 0x0b33), (0x0b35, 0x0b39), (0x0b3c, 0x0b44), (0x0b47, 0x0b48), (0x0b4b, 0x0b4d), (0x0b53, 0x0b57), (0x0b5c, 0x0b5d), (0x0b5f, 0x0b63), (0x0b66, 0x0b77)])
 TAMIL = UnicodeBlock(name='Tamil', start=0x0b80, end=0x0bff, assigned_ranges=[(0x0b82, 0x0b83), (0x0b85, 0x0b8a), (0x0b8e, 0x0b90), (0x0b92, 0x0b95), (0x0b99, 0x0b9a), (0x0b9c, 0x0b9c), (0x0b9e, 0x0b9f), (0x0ba3, 0x0ba4), (0x0ba8, 0x0baa), (0x0bae, 0x0bb9), (0x0bbe, 0x0bc2), (0x0bc6, 0x0bc8), (0x0bca, 0x0bcd), (0x0bd0, 0x0bd0), (0x0bd7, 0x0bd7), (0x0be6, 0x0bfa)])
 TELUGU = UnicodeBlock(name='Telugu', start=0x0c00, end=0x0c7f, assigned_ranges=[(0x0c00, 0x0c0c), (0x0c0e, 0x0c10), (0x0c12, 0x0c28), (0x0c2a, 0x0c39), (0x0c3c, 0x0c44), (0x0c46, 0x0c48), (0x0c4a, 0x0c4d), (0x0c55, 0x0c56), (0x0c58, 0x0c5a), (0x0c5c, 0x0c5d), (0x0c60, 0x0c63), (0x0c66, 0x0c6f), (0x0c77, 0x0c7f)])
 KANNADA = UnicodeBlock(name='Kannada', start=0x0c80, end=0x0cff, assigned_ranges=[(0x0c80, 0x0c8c), (0x0c8e, 0x0c90), (0x0c92, 0x0ca8), (0x0caa, 0x0cb3), (0x0cb5, 0x0cb9), (0x0cbc, 0x0cc4), (0x0cc6, 0x0cc8), (0x0cca, 0x0ccd), (0x0cd5, 0x0cd6), (0x0cdc, 0x0cde), (0x0ce0, 0x0ce3), (0x0ce6, 0x0cef), (0x0cf1, 0x0cf3)])
@@ -64,7 +64,7 @@ NEW_TAI_LUE = UnicodeBlock(name='New Tai Lue', start=0x1980, end=0x19df, assigne
 KHMER_SYMBOLS = UnicodeBlock(name='Khmer Symbols', start=0x19e0, end=0x19ff, assigned_ranges=[(0x19e0, 0x19ff)])
 BUGINESE = UnicodeBlock(name='Buginese', start=0x1a00, end=0x1a1f, assigned_ranges=[(0x1a00, 0x1a1b), (0x1a1e, 0x1a1f)])
 TAI_THAM = UnicodeBlock(name='Tai Tham', start=0x1a20, end=0x1aaf, assigned_ranges=[(0x1a20, 0x1a5e), (0x1a60, 0x1a7c), (0x1a7f, 0x1a89), (0x1a90, 0x1a99), (0x1aa0, 0x1aad)])
-COMBINING_DIACRITICAL_MARKS_EXTENDED = UnicodeBlock(name='Combining Diacritical Marks Extended', start=0x1ab0, end=0x1aff, assigned_ranges=[(0x1ab0, 0x1add), (0x1ae0, 0x1aeb)], aliases=['Diacriticals_Ext'])
+COMBINING_DIACRITICAL_MARKS_EXTENDED = UnicodeBlock(name='Combining Diacritical Marks Extended', start=0x1ab0, end=0x1aff, assigned_ranges=[(0x1ab0, 0x1af0)], aliases=['Diacriticals_Ext'])
 BALINESE = UnicodeBlock(name='Balinese', start=0x1b00, end=0x1b7f, assigned_ranges=[(0x1b00, 0x1b4c), (0x1b4e, 0x1b7f)])
 SUNDANESE = UnicodeBlock(name='Sundanese', start=0x1b80, end=0x1bbf, assigned_ranges=[(0x1b80, 0x1bbf)])
 BATAK = UnicodeBlock(name='Batak', start=0x1bc0, end=0x1bff, assigned_ranges=[(0x1bc0, 0x1bf3), (0x1bfc, 0x1bff)])
@@ -80,8 +80,8 @@ COMBINING_DIACRITICAL_MARKS_SUPPLEMENT = UnicodeBlock(name='Combining Diacritica
 LATIN_EXTENDED_ADDITIONAL = UnicodeBlock(name='Latin Extended Additional', start=0x1e00, end=0x1eff, assigned_ranges=[(0x1e00, 0x1eff)], aliases=['Latin_Ext_Additional'])
 GREEK_EXTENDED = UnicodeBlock(name='Greek Extended', start=0x1f00, end=0x1fff, assigned_ranges=[(0x1f00, 0x1f15), (0x1f18, 0x1f1d), (0x1f20, 0x1f45), (0x1f48, 0x1f4d), (0x1f50, 0x1f57), (0x1f59, 0x1f59), (0x1f5b, 0x1f5b), (0x1f5d, 0x1f5d), (0x1f5f, 0x1f7d), (0x1f80, 0x1fb4), (0x1fb6, 0x1fc4), (0x1fc6, 0x1fd3), (0x1fd6, 0x1fdb), (0x1fdd, 0x1fef), (0x1ff2, 0x1ff4), (0x1ff6, 0x1ffe)], aliases=['Greek_Ext'])
 GENERAL_PUNCTUATION = UnicodeBlock(name='General Punctuation', start=0x2000, end=0x206f, assigned_ranges=[(0x2000, 0x2064), (0x2066, 0x206f)], aliases=['Punctuation'])
-SUPERSCRIPTS_AND_SUBSCRIPTS = UnicodeBlock(name='Superscripts and Subscripts', start=0x2070, end=0x209f, assigned_ranges=[(0x2070, 0x2071), (0x2074, 0x208e), (0x2090, 0x209c)], aliases=['Super_And_Sub'])
-CURRENCY_SYMBOLS = UnicodeBlock(name='Currency Symbols', start=0x20a0, end=0x20cf, assigned_ranges=[(0x20a0, 0x20c1)])
+SUPERSCRIPTS_AND_SUBSCRIPTS = UnicodeBlock(name='Superscripts and Subscripts', start=0x2070, end=0x209f, assigned_ranges=[(0x2070, 0x2071), (0x2074, 0x209f)], aliases=['Super_And_Sub'])
+CURRENCY_SYMBOLS = UnicodeBlock(name='Currency Symbols', start=0x20a0, end=0x20cf, assigned_ranges=[(0x20a0, 0x20c4)])
 COMBINING_DIACRITICAL_MARKS_FOR_SYMBOLS = UnicodeBlock(name='Combining Diacritical Marks for Symbols', start=0x20d0, end=0x20ff, assigned_ranges=[(0x20d0, 0x20f0)], aliases=['Diacriticals_For_Symbols', 'Combining_Marks_For_Symbols'])
 LETTERLIKE_SYMBOLS = UnicodeBlock(name='Letterlike Symbols', start=0x2100, end=0x214f, assigned_ranges=[(0x2100, 0x214f)])
 NUMBER_FORMS = UnicodeBlock(name='Number Forms', start=0x2150, end=0x218f, assigned_ranges=[(0x2150, 0x218b)])
@@ -110,7 +110,7 @@ GEORGIAN_SUPPLEMENT = UnicodeBlock(name='Georgian Supplement', start=0x2d00, end
 TIFINAGH = UnicodeBlock(name='Tifinagh', start=0x2d30, end=0x2d7f, assigned_ranges=[(0x2d30, 0x2d67), (0x2d6f, 0x2d70), (0x2d7f, 0x2d7f)])
 ETHIOPIC_EXTENDED = UnicodeBlock(name='Ethiopic Extended', start=0x2d80, end=0x2ddf, assigned_ranges=[(0x2d80, 0x2d96), (0x2da0, 0x2da6), (0x2da8, 0x2dae), (0x2db0, 0x2db6), (0x2db8, 0x2dbe), (0x2dc0, 0x2dc6), (0x2dc8, 0x2dce), (0x2dd0, 0x2dd6), (0x2dd8, 0x2dde)], aliases=['Ethiopic_Ext'])
 CYRILLIC_EXTENDED_A = UnicodeBlock(name='Cyrillic Extended-A', start=0x2de0, end=0x2dff, assigned_ranges=[(0x2de0, 0x2dff)], aliases=['Cyrillic_Ext_A'])
-SUPPLEMENTAL_PUNCTUATION = UnicodeBlock(name='Supplemental Punctuation', start=0x2e00, end=0x2e7f, assigned_ranges=[(0x2e00, 0x2e5d)], aliases=['Sup_Punctuation'])
+SUPPLEMENTAL_PUNCTUATION = UnicodeBlock(name='Supplemental Punctuation', start=0x2e00, end=0x2e7f, assigned_ranges=[(0x2e00, 0x2e5d), (0x2e60, 0x2e63)], aliases=['Sup_Punctuation'])
 CJK_RADICALS_SUPPLEMENT = UnicodeBlock(name='CJK Radicals Supplement', start=0x2e80, end=0x2eff, assigned_ranges=[(0x2e80, 0x2e99), (0x2e9b, 0x2ef3)], aliases=['CJK_Radicals_Sup'])
 KANGXI_RADICALS = UnicodeBlock(name='Kangxi Radicals', start=0x2f00, end=0x2fdf, assigned_ranges=[(0x2f00, 0x2fd5)], aliases=['Kangxi'])
 IDEOGRAPHIC_DESCRIPTION_CHARACTERS = UnicodeBlock(name='Ideographic Description Characters', start=0x2ff0, end=0x2fff, assigned_ranges=[(0x2ff0, 0x2fff)], aliases=['IDC'])
@@ -135,7 +135,7 @@ VAI = UnicodeBlock(name='Vai', start=0xa500, end=0xa63f, assigned_ranges=[(0xa50
 CYRILLIC_EXTENDED_B = UnicodeBlock(name='Cyrillic Extended-B', start=0xa640, end=0xa69f, assigned_ranges=[(0xa640, 0xa69f)], aliases=['Cyrillic_Ext_B'])
 BAMUM = UnicodeBlock(name='Bamum', start=0xa6a0, end=0xa6ff, assigned_ranges=[(0xa6a0, 0xa6f7)])
 MODIFIER_TONE_LETTERS = UnicodeBlock(name='Modifier Tone Letters', start=0xa700, end=0xa71f, assigned_ranges=[(0xa700, 0xa71f)])
-LATIN_EXTENDED_D = UnicodeBlock(name='Latin Extended-D', start=0xa720, end=0xa7ff, assigned_ranges=[(0xa720, 0xa7dc), (0xa7f1, 0xa7ff)], aliases=['Latin_Ext_D'])
+LATIN_EXTENDED_D = UnicodeBlock(name='Latin Extended-D', start=0xa720, end=0xa7ff, assigned_ranges=[(0xa720, 0xa7dd), (0xa7e2, 0xa7e2), (0xa7f1, 0xa7ff)], aliases=['Latin_Ext_D'])
 SYLOTI_NAGRI = UnicodeBlock(name='Syloti Nagri', start=0xa800, end=0xa82f, assigned_ranges=[(0xa800, 0xa82c)])
 COMMON_INDIC_NUMBER_FORMS = UnicodeBlock(name='Common Indic Number Forms', start=0xa830, end=0xa83f, assigned_ranges=[(0xa830, 0xa839)], aliases=['Indic_Number_Forms'])
 PHAGS_PA = UnicodeBlock(name='Phags-pa', start=0xa840, end=0xa87f, assigned_ranges=[(0xa840, 0xa877)])
@@ -151,7 +151,7 @@ MYANMAR_EXTENDED_A = UnicodeBlock(name='Myanmar Extended-A', start=0xaa60, end=0
 TAI_VIET = UnicodeBlock(name='Tai Viet', start=0xaa80, end=0xaadf, assigned_ranges=[(0xaa80, 0xaac2), (0xaadb, 0xaadf)])
 MEETEI_MAYEK_EXTENSIONS = UnicodeBlock(name='Meetei Mayek Extensions', start=0xaae0, end=0xaaff, assigned_ranges=[(0xaae0, 0xaaf6)], aliases=['Meetei_Mayek_Ext'])
 ETHIOPIC_EXTENDED_A = UnicodeBlock(name='Ethiopic Extended-A', start=0xab00, end=0xab2f, assigned_ranges=[(0xab01, 0xab06), (0xab09, 0xab0e), (0xab11, 0xab16), (0xab20, 0xab26), (0xab28, 0xab2e)], aliases=['Ethiopic_Ext_A'])
-LATIN_EXTENDED_E = UnicodeBlock(name='Latin Extended-E', start=0xab30, end=0xab6f, assigned_ranges=[(0xab30, 0xab6b)], aliases=['Latin_Ext_E'])
+LATIN_EXTENDED_E = UnicodeBlock(name='Latin Extended-E', start=0xab30, end=0xab6f, assigned_ranges=[(0xab30, 0xab6d)], aliases=['Latin_Ext_E'])
 CHEROKEE_SUPPLEMENT = UnicodeBlock(name='Cherokee Supplement', start=0xab70, end=0xabbf, assigned_ranges=[(0xab70, 0xabbf)], aliases=['Cherokee_Sup'])
 MEETEI_MAYEK = UnicodeBlock(name='Meetei Mayek', start=0xabc0, end=0xabff, assigned_ranges=[(0xabc0, 0xabed), (0xabf0, 0xabf9)])
 HANGUL_SYLLABLES = UnicodeBlock(name='Hangul Syllables', start=0xac00, end=0xd7af, assigned_ranges=[(0xac00, 0xd7a3)], aliases=['Hangul'])
@@ -194,7 +194,7 @@ CAUCASIAN_ALBANIAN = UnicodeBlock(name='Caucasian Albanian', start=0x10530, end=
 VITHKUQI = UnicodeBlock(name='Vithkuqi', start=0x10570, end=0x105bf, assigned_ranges=[(0x10570, 0x1057a), (0x1057c, 0x1058a), (0x1058c, 0x10592), (0x10594, 0x10595), (0x10597, 0x105a1), (0x105a3, 0x105b1), (0x105b3, 0x105b9), (0x105bb, 0x105bc)])
 TODHRI = UnicodeBlock(name='Todhri', start=0x105c0, end=0x105ff, assigned_ranges=[(0x105c0, 0x105f3)])
 LINEAR_A = UnicodeBlock(name='Linear A', start=0x10600, end=0x1077f, assigned_ranges=[(0x10600, 0x10736), (0x10740, 0x10755), (0x10760, 0x10767)])
-LATIN_EXTENDED_F = UnicodeBlock(name='Latin Extended-F', start=0x10780, end=0x107bf, assigned_ranges=[(0x10780, 0x10785), (0x10787, 0x107b0), (0x107b2, 0x107ba)], aliases=['Latin_Ext_F'])
+LATIN_EXTENDED_F = UnicodeBlock(name='Latin Extended-F', start=0x10780, end=0x107bf, assigned_ranges=[(0x10780, 0x10785), (0x10787, 0x107b0), (0x107b2, 0x107bf)], aliases=['Latin_Ext_F'])
 CYPRIOT_SYLLABARY = UnicodeBlock(name='Cypriot Syllabary', start=0x10800, end=0x1083f, assigned_ranges=[(0x10800, 0x10805), (0x10808, 0x10808), (0x1080a, 0x10835), (0x10837, 0x10838), (0x1083c, 0x1083c), (0x1083f, 0x1083f)])
 IMPERIAL_ARAMAIC = UnicodeBlock(name='Imperial Aramaic', start=0x10840, end=0x1085f, assigned_ranges=[(0x10840, 0x10855), (0x10857, 0x1085f)])
 PALMYRENE = UnicodeBlock(name='Palmyrene', start=0x10860, end=0x1087f, assigned_ranges=[(0x10860, 0x1087f)])
@@ -219,7 +219,7 @@ HANIFI_ROHINGYA = UnicodeBlock(name='Hanifi Rohingya', start=0x10d00, end=0x10d3
 GARAY = UnicodeBlock(name='Garay', start=0x10d40, end=0x10d8f, assigned_ranges=[(0x10d40, 0x10d65), (0x10d69, 0x10d85), (0x10d8e, 0x10d8f)])
 RUMI_NUMERAL_SYMBOLS = UnicodeBlock(name='Rumi Numeral Symbols', start=0x10e60, end=0x10e7f, assigned_ranges=[(0x10e60, 0x10e7e)], aliases=['Rumi'])
 YEZIDI = UnicodeBlock(name='Yezidi', start=0x10e80, end=0x10ebf, assigned_ranges=[(0x10e80, 0x10ea9), (0x10eab, 0x10ead), (0x10eb0, 0x10eb1)])
-ARABIC_EXTENDED_C = UnicodeBlock(name='Arabic Extended-C', start=0x10ec0, end=0x10eff, assigned_ranges=[(0x10ec2, 0x10ec7), (0x10ed0, 0x10ed8), (0x10efa, 0x10eff)], aliases=['Arabic_Ext_C'])
+ARABIC_EXTENDED_C = UnicodeBlock(name='Arabic Extended-C', start=0x10ec0, end=0x10eff, assigned_ranges=[(0x10ec2, 0x10ec7), (0x10ec9, 0x10eee), (0x10ef0, 0x10eff)], aliases=['Arabic_Ext_C'])
 OLD_SOGDIAN = UnicodeBlock(name='Old Sogdian', start=0x10f00, end=0x10f2f, assigned_ranges=[(0x10f00, 0x10f27)])
 SOGDIAN = UnicodeBlock(name='Sogdian', start=0x10f30, end=0x10f6f, assigned_ranges=[(0x10f30, 0x10f59)])
 OLD_UYGHUR = UnicodeBlock(name='Old Uyghur', start=0x10f70, end=0x10faf, assigned_ranges=[(0x10f70, 0x10f89)])
@@ -253,7 +253,7 @@ ZANABAZAR_SQUARE = UnicodeBlock(name='Zanabazar Square', start=0x11a00, end=0x11
 SOYOMBO = UnicodeBlock(name='Soyombo', start=0x11a50, end=0x11aaf, assigned_ranges=[(0x11a50, 0x11aa2)])
 UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A = UnicodeBlock(name='Unified Canadian Aboriginal Syllabics Extended-A', start=0x11ab0, end=0x11abf, assigned_ranges=[(0x11ab0, 0x11abf)], aliases=['UCAS_Ext_A'])
 PAU_CIN_HAU = UnicodeBlock(name='Pau Cin Hau', start=0x11ac0, end=0x11aff, assigned_ranges=[(0x11ac0, 0x11af8)])
-DEVANAGARI_EXTENDED_A = UnicodeBlock(name='Devanagari Extended-A', start=0x11b00, end=0x11b5f, assigned_ranges=[(0x11b00, 0x11b09)], aliases=['Devanagari_Ext_A'])
+DEVANAGARI_EXTENDED_A = UnicodeBlock(name='Devanagari Extended-A', start=0x11b00, end=0x11b5f, assigned_ranges=[(0x11b00, 0x11b0a)], aliases=['Devanagari_Ext_A'])
 SHARADA_SUPPLEMENT = UnicodeBlock(name='Sharada Supplement', start=0x11b60, end=0x11b7f, assigned_ranges=[(0x11b60, 0x11b67)], aliases=['Sharada_Sup'])
 SUNUWAR = UnicodeBlock(name='Sunuwar', start=0x11bc0, end=0x11bff, assigned_ranges=[(0x11bc0, 0x11be1), (0x11bf0, 0x11bf9)])
 BHAIKSUKI = UnicodeBlock(name='Bhaiksuki', start=0x11c00, end=0x11c6f, assigned_ranges=[(0x11c00, 0x11c08), (0x11c0a, 0x11c36), (0x11c38, 0x11c45), (0x11c50, 0x11c6c)])
@@ -261,13 +261,15 @@ MARCHEN = UnicodeBlock(name='Marchen', start=0x11c70, end=0x11cbf, assigned_rang
 MASARAM_GONDI = UnicodeBlock(name='Masaram Gondi', start=0x11d00, end=0x11d5f, assigned_ranges=[(0x11d00, 0x11d06), (0x11d08, 0x11d09), (0x11d0b, 0x11d36), (0x11d3a, 0x11d3a), (0x11d3c, 0x11d3d), (0x11d3f, 0x11d47), (0x11d50, 0x11d59)])
 GUNJALA_GONDI = UnicodeBlock(name='Gunjala Gondi', start=0x11d60, end=0x11daf, assigned_ranges=[(0x11d60, 0x11d65), (0x11d67, 0x11d68), (0x11d6a, 0x11d8e), (0x11d90, 0x11d91), (0x11d93, 0x11d98), (0x11da0, 0x11da9)])
 TOLONG_SIKI = UnicodeBlock(name='Tolong Siki', start=0x11db0, end=0x11def, assigned_ranges=[(0x11db0, 0x11ddb), (0x11de0, 0x11de9)])
+BENGALI_SUPPLEMENT = UnicodeBlock(name='Bengali Supplement', start=0x11df0, end=0x11dff, assigned_ranges=[(0x11df0, 0x11df1)], aliases=['Bengali_Sup'])
 MAKASAR = UnicodeBlock(name='Makasar', start=0x11ee0, end=0x11eff, assigned_ranges=[(0x11ee0, 0x11ef8)])
 KAWI = UnicodeBlock(name='Kawi', start=0x11f00, end=0x11f5f, assigned_ranges=[(0x11f00, 0x11f10), (0x11f12, 0x11f3a), (0x11f3e, 0x11f5a)])
 LISU_SUPPLEMENT = UnicodeBlock(name='Lisu Supplement', start=0x11fb0, end=0x11fbf, assigned_ranges=[(0x11fb0, 0x11fb0)], aliases=['Lisu_Sup'])
 TAMIL_SUPPLEMENT = UnicodeBlock(name='Tamil Supplement', start=0x11fc0, end=0x11fff, assigned_ranges=[(0x11fc0, 0x11ff1), (0x11fff, 0x11fff)], aliases=['Tamil_Sup'])
 CUNEIFORM = UnicodeBlock(name='Cuneiform', start=0x12000, end=0x123ff, assigned_ranges=[(0x12000, 0x12399)])
-CUNEIFORM_NUMBERS_AND_PUNCTUATION = UnicodeBlock(name='Cuneiform Numbers and Punctuation', start=0x12400, end=0x1247f, assigned_ranges=[(0x12400, 0x1246e), (0x12470, 0x12474)], aliases=['Cuneiform_Numbers'])
+CUNEIFORM_NUMBERS_AND_PUNCTUATION = UnicodeBlock(name='Cuneiform Numbers and Punctuation', start=0x12400, end=0x1247f, assigned_ranges=[(0x12400, 0x1247f)], aliases=['Cuneiform_Numbers'])
 EARLY_DYNASTIC_CUNEIFORM = UnicodeBlock(name='Early Dynastic Cuneiform', start=0x12480, end=0x1254f, assigned_ranges=[(0x12480, 0x12543)])
+ARCHAIC_CUNEIFORM_NUMERALS = UnicodeBlock(name='Archaic Cuneiform Numerals', start=0x12550, end=0x1268f, assigned_ranges=[(0x12550, 0x12686)])
 CYPRO_MINOAN = UnicodeBlock(name='Cypro-Minoan', start=0x12f90, end=0x12fff, assigned_ranges=[(0x12f90, 0x12ff2)])
 EGYPTIAN_HIEROGLYPHS = UnicodeBlock(name='Egyptian Hieroglyphs', start=0x13000, end=0x1342f, assigned_ranges=[(0x13000, 0x1342f)])
 EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS = UnicodeBlock(name='Egyptian Hieroglyph Format Controls', start=0x13430, end=0x1345f, assigned_ranges=[(0x13430, 0x13455)])
@@ -286,29 +288,33 @@ MIAO = UnicodeBlock(name='Miao', start=0x16f00, end=0x16f9f, assigned_ranges=[(0
 IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION = UnicodeBlock(name='Ideographic Symbols and Punctuation', start=0x16fe0, end=0x16fff, assigned_ranges=[(0x16fe0, 0x16fe4), (0x16ff0, 0x16ff6)], aliases=['Ideographic_Symbols'])
 TANGUT = UnicodeBlock(name='Tangut', start=0x17000, end=0x187ff, assigned_ranges=[(0x17000, 0x187ff)])
 TANGUT_COMPONENTS = UnicodeBlock(name='Tangut Components', start=0x18800, end=0x18aff, assigned_ranges=[(0x18800, 0x18aff)])
-KHITAN_SMALL_SCRIPT = UnicodeBlock(name='Khitan Small Script', start=0x18b00, end=0x18cff, assigned_ranges=[(0x18b00, 0x18cd5), (0x18cff, 0x18cff)])
-TANGUT_SUPPLEMENT = UnicodeBlock(name='Tangut Supplement', start=0x18d00, end=0x18d7f, assigned_ranges=[(0x18d00, 0x18d1e)], aliases=['Tangut_Sup'])
+KHITAN_SMALL_SCRIPT = UnicodeBlock(name='Khitan Small Script', start=0x18b00, end=0x18cff, assigned_ranges=[(0x18b00, 0x18cda), (0x18cff, 0x18cff)])
+TANGUT_SUPPLEMENT = UnicodeBlock(name='Tangut Supplement', start=0x18d00, end=0x18d7f, assigned_ranges=[(0x18d00, 0x18d20)], aliases=['Tangut_Sup'])
 TANGUT_COMPONENTS_SUPPLEMENT = UnicodeBlock(name='Tangut Components Supplement', start=0x18d80, end=0x18dff, assigned_ranges=[(0x18d80, 0x18df2)], aliases=['Tangut_Components_Sup'])
+JURCHEN = UnicodeBlock(name='Jurchen', start=0x18e00, end=0x1919f, assigned_ranges=[(0x18e00, 0x19191)])
+JURCHEN_RADICALS = UnicodeBlock(name='Jurchen Radicals', start=0x191a0, end=0x191df, assigned_ranges=[(0x191a0, 0x191d2)])
 KANA_EXTENDED_B = UnicodeBlock(name='Kana Extended-B', start=0x1aff0, end=0x1afff, assigned_ranges=[(0x1aff0, 0x1aff3), (0x1aff5, 0x1affb), (0x1affd, 0x1affe)], aliases=['Kana_Ext_B'])
 KANA_SUPPLEMENT = UnicodeBlock(name='Kana Supplement', start=0x1b000, end=0x1b0ff, assigned_ranges=[(0x1b000, 0x1b0ff)], aliases=['Kana_Sup'])
-KANA_EXTENDED_A = UnicodeBlock(name='Kana Extended-A', start=0x1b100, end=0x1b12f, assigned_ranges=[(0x1b100, 0x1b122)], aliases=['Kana_Ext_A'])
-SMALL_KANA_EXTENSION = UnicodeBlock(name='Small Kana Extension', start=0x1b130, end=0x1b16f, assigned_ranges=[(0x1b132, 0x1b132), (0x1b150, 0x1b152), (0x1b155, 0x1b155), (0x1b164, 0x1b167)], aliases=['Small_Kana_Ext'])
+KANA_EXTENDED_A = UnicodeBlock(name='Kana Extended-A', start=0x1b100, end=0x1b12f, assigned_ranges=[(0x1b100, 0x1b128)], aliases=['Kana_Ext_A'])
+SMALL_KANA_EXTENSION = UnicodeBlock(name='Small Kana Extension', start=0x1b130, end=0x1b16f, assigned_ranges=[(0x1b132, 0x1b132), (0x1b150, 0x1b152), (0x1b155, 0x1b155), (0x1b164, 0x1b168)], aliases=['Small_Kana_Ext'])
 NUSHU = UnicodeBlock(name='Nushu', start=0x1b170, end=0x1b2ff, assigned_ranges=[(0x1b170, 0x1b2fb)])
 DUPLOYAN = UnicodeBlock(name='Duployan', start=0x1bc00, end=0x1bc9f, assigned_ranges=[(0x1bc00, 0x1bc6a), (0x1bc70, 0x1bc7c), (0x1bc80, 0x1bc88), (0x1bc90, 0x1bc99), (0x1bc9c, 0x1bc9f)])
 SHORTHAND_FORMAT_CONTROLS = UnicodeBlock(name='Shorthand Format Controls', start=0x1bca0, end=0x1bcaf, assigned_ranges=[(0x1bca0, 0x1bca3)])
 SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT = UnicodeBlock(name='Symbols for Legacy Computing Supplement', start=0x1cc00, end=0x1cebf, assigned_ranges=[(0x1cc00, 0x1ccfc), (0x1cd00, 0x1ceb3), (0x1ceba, 0x1cebf)], aliases=['Symbols_For_Legacy_Computing_Sup'])
-MISCELLANEOUS_SYMBOLS_SUPPLEMENT = UnicodeBlock(name='Miscellaneous Symbols Supplement', start=0x1cec0, end=0x1ceff, assigned_ranges=[(0x1cec0, 0x1ced0), (0x1cee0, 0x1cef0)], aliases=['Misc_Symbols_Sup'])
+MISCELLANEOUS_SYMBOLS_SUPPLEMENT = UnicodeBlock(name='Miscellaneous Symbols Supplement', start=0x1cec0, end=0x1ceff, assigned_ranges=[(0x1cec0, 0x1ced0), (0x1ced2, 0x1ced4), (0x1cedd, 0x1cefd)], aliases=['Misc_Symbols_Sup'])
 ZNAMENNY_MUSICAL_NOTATION = UnicodeBlock(name='Znamenny Musical Notation', start=0x1cf00, end=0x1cfcf, assigned_ranges=[(0x1cf00, 0x1cf2d), (0x1cf30, 0x1cf46), (0x1cf50, 0x1cfc3)], aliases=['Znamenny_Music'])
 BYZANTINE_MUSICAL_SYMBOLS = UnicodeBlock(name='Byzantine Musical Symbols', start=0x1d000, end=0x1d0ff, assigned_ranges=[(0x1d000, 0x1d0f5)], aliases=['Byzantine_Music'])
-MUSICAL_SYMBOLS = UnicodeBlock(name='Musical Symbols', start=0x1d100, end=0x1d1ff, assigned_ranges=[(0x1d100, 0x1d126), (0x1d129, 0x1d1ea)], aliases=['Music'])
+MUSICAL_SYMBOLS = UnicodeBlock(name='Musical Symbols', start=0x1d100, end=0x1d1ff, assigned_ranges=[(0x1d100, 0x1d1ff)], aliases=['Music'])
 ANCIENT_GREEK_MUSICAL_NOTATION = UnicodeBlock(name='Ancient Greek Musical Notation', start=0x1d200, end=0x1d24f, assigned_ranges=[(0x1d200, 0x1d245)], aliases=['Ancient_Greek_Music'])
+MUSICAL_SYMBOLS_SUPPLEMENT = UnicodeBlock(name='Musical Symbols Supplement', start=0x1d250, end=0x1d28f, assigned_ranges=[(0x1d250, 0x1d281)], aliases=['Music_Sup'])
 KAKTOVIK_NUMERALS = UnicodeBlock(name='Kaktovik Numerals', start=0x1d2c0, end=0x1d2df, assigned_ranges=[(0x1d2c0, 0x1d2d3)])
 MAYAN_NUMERALS = UnicodeBlock(name='Mayan Numerals', start=0x1d2e0, end=0x1d2ff, assigned_ranges=[(0x1d2e0, 0x1d2f3)])
 TAI_XUAN_JING_SYMBOLS = UnicodeBlock(name='Tai Xuan Jing Symbols', start=0x1d300, end=0x1d35f, assigned_ranges=[(0x1d300, 0x1d356)], aliases=['Tai_Xuan_Jing'])
 COUNTING_ROD_NUMERALS = UnicodeBlock(name='Counting Rod Numerals', start=0x1d360, end=0x1d37f, assigned_ranges=[(0x1d360, 0x1d378)], aliases=['Counting_Rod'])
-MATHEMATICAL_ALPHANUMERIC_SYMBOLS = UnicodeBlock(name='Mathematical Alphanumeric Symbols', start=0x1d400, end=0x1d7ff, assigned_ranges=[(0x1d400, 0x1d454), (0x1d456, 0x1d49c), (0x1d49e, 0x1d49f), (0x1d4a2, 0x1d4a2), (0x1d4a5, 0x1d4a6), (0x1d4a9, 0x1d4ac), (0x1d4ae, 0x1d4b9), (0x1d4bb, 0x1d4bb), (0x1d4bd, 0x1d4c3), (0x1d4c5, 0x1d505), (0x1d507, 0x1d50a), (0x1d50d, 0x1d514), (0x1d516, 0x1d51c), (0x1d51e, 0x1d539), (0x1d53b, 0x1d53e), (0x1d540, 0x1d544), (0x1d546, 0x1d546), (0x1d54a, 0x1d550), (0x1d552, 0x1d6a5), (0x1d6a8, 0x1d7cb), (0x1d7ce, 0x1d7ff)], aliases=['Math_Alphanum'])
+MATHEMATICAL_ALPHANUMERIC_SYMBOLS = UnicodeBlock(name='Mathematical Alphanumeric Symbols', start=0x1d400, end=0x1d7ff, assigned_ranges=[(0x1d400, 0x1d454), (0x1d456, 0x1d49c), (0x1d49e, 0x1d49f), (0x1d4a2, 0x1d4a2), (0x1d4a5, 0x1d4a6), (0x1d4a9, 0x1d4ac), (0x1d4ae, 0x1d4b9), (0x1d4bb, 0x1d4bb), (0x1d4bd, 0x1d4c3), (0x1d4c5, 0x1d505), (0x1d507, 0x1d50a), (0x1d50d, 0x1d514), (0x1d516, 0x1d51c), (0x1d51e, 0x1d539), (0x1d53b, 0x1d53e), (0x1d540, 0x1d544), (0x1d546, 0x1d546), (0x1d54a, 0x1d550), (0x1d552, 0x1d6a6), (0x1d6a8, 0x1d7cb), (0x1d7ce, 0x1d7ff)], aliases=['Math_Alphanum'])
 SUTTON_SIGNWRITING = UnicodeBlock(name='Sutton SignWriting', start=0x1d800, end=0x1daaf, assigned_ranges=[(0x1d800, 0x1da8b), (0x1da9b, 0x1da9f), (0x1daa1, 0x1daaf)])
-LATIN_EXTENDED_G = UnicodeBlock(name='Latin Extended-G', start=0x1df00, end=0x1dfff, assigned_ranges=[(0x1df00, 0x1df1e), (0x1df25, 0x1df2a)], aliases=['Latin_Ext_G'])
+MISCELLANEOUS_SYMBOLS_AND_ARROWS_EXTENDED = UnicodeBlock(name='Miscellaneous Symbols and Arrows Extended', start=0x1db00, end=0x1dbff, assigned_ranges=[(0x1db00, 0x1db1c)], aliases=['Misc_Arrows_Ext'])
+LATIN_EXTENDED_G = UnicodeBlock(name='Latin Extended-G', start=0x1df00, end=0x1dfff, assigned_ranges=[(0x1df00, 0x1df81), (0x1df90, 0x1df96), (0x1dfcd, 0x1dfff)], aliases=['Latin_Ext_G'])
 GLAGOLITIC_SUPPLEMENT = UnicodeBlock(name='Glagolitic Supplement', start=0x1e000, end=0x1e02f, assigned_ranges=[(0x1e000, 0x1e006), (0x1e008, 0x1e018), (0x1e01b, 0x1e021), (0x1e023, 0x1e024), (0x1e026, 0x1e02a)], aliases=['Glagolitic_Sup'])
 CYRILLIC_EXTENDED_D = UnicodeBlock(name='Cyrillic Extended-D', start=0x1e030, end=0x1e08f, assigned_ranges=[(0x1e030, 0x1e06d), (0x1e08f, 0x1e08f)], aliases=['Cyrillic_Ext_D'])
 NYIAKENG_PUACHUE_HMONG = UnicodeBlock(name='Nyiakeng Puachue Hmong', start=0x1e100, end=0x1e14f, assigned_ranges=[(0x1e100, 0x1e12c), (0x1e130, 0x1e13d), (0x1e140, 0x1e149), (0x1e14e, 0x1e14f)])
@@ -326,22 +332,22 @@ ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS = UnicodeBlock(name='Arabic Mathematical 
 MAHJONG_TILES = UnicodeBlock(name='Mahjong Tiles', start=0x1f000, end=0x1f02f, assigned_ranges=[(0x1f000, 0x1f02b)], aliases=['Mahjong'])
 DOMINO_TILES = UnicodeBlock(name='Domino Tiles', start=0x1f030, end=0x1f09f, assigned_ranges=[(0x1f030, 0x1f093)], aliases=['Domino'])
 PLAYING_CARDS = UnicodeBlock(name='Playing Cards', start=0x1f0a0, end=0x1f0ff, assigned_ranges=[(0x1f0a0, 0x1f0ae), (0x1f0b1, 0x1f0bf), (0x1f0c1, 0x1f0cf), (0x1f0d1, 0x1f0f5)])
-ENCLOSED_ALPHANUMERIC_SUPPLEMENT = UnicodeBlock(name='Enclosed Alphanumeric Supplement', start=0x1f100, end=0x1f1ff, assigned_ranges=[(0x1f100, 0x1f1ad), (0x1f1e6, 0x1f1ff)], aliases=['Enclosed_Alphanum_Sup'])
+ENCLOSED_ALPHANUMERIC_SUPPLEMENT = UnicodeBlock(name='Enclosed Alphanumeric Supplement', start=0x1f100, end=0x1f1ff, assigned_ranges=[(0x1f100, 0x1f1ae), (0x1f1e6, 0x1f1ff)], aliases=['Enclosed_Alphanum_Sup'])
 ENCLOSED_IDEOGRAPHIC_SUPPLEMENT = UnicodeBlock(name='Enclosed Ideographic Supplement', start=0x1f200, end=0x1f2ff, assigned_ranges=[(0x1f200, 0x1f202), (0x1f210, 0x1f23b), (0x1f240, 0x1f248), (0x1f250, 0x1f251), (0x1f260, 0x1f265)], aliases=['Enclosed_Ideographic_Sup'])
 MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS = UnicodeBlock(name='Miscellaneous Symbols and Pictographs', start=0x1f300, end=0x1f5ff, assigned_ranges=[(0x1f300, 0x1f5ff)], aliases=['Misc_Pictographs'])
 EMOTICONS = UnicodeBlock(name='Emoticons', start=0x1f600, end=0x1f64f, assigned_ranges=[(0x1f600, 0x1f64f)])
 ORNAMENTAL_DINGBATS = UnicodeBlock(name='Ornamental Dingbats', start=0x1f650, end=0x1f67f, assigned_ranges=[(0x1f650, 0x1f67f)])
-TRANSPORT_AND_MAP_SYMBOLS = UnicodeBlock(name='Transport and Map Symbols', start=0x1f680, end=0x1f6ff, assigned_ranges=[(0x1f680, 0x1f6d8), (0x1f6dc, 0x1f6ec), (0x1f6f0, 0x1f6fc)], aliases=['Transport_And_Map'])
+TRANSPORT_AND_MAP_SYMBOLS = UnicodeBlock(name='Transport and Map Symbols', start=0x1f680, end=0x1f6ff, assigned_ranges=[(0x1f680, 0x1f6d9), (0x1f6dc, 0x1f6ec), (0x1f6f0, 0x1f6fc)], aliases=['Transport_And_Map'])
 ALCHEMICAL_SYMBOLS = UnicodeBlock(name='Alchemical Symbols', start=0x1f700, end=0x1f77f, assigned_ranges=[(0x1f700, 0x1f77f)], aliases=['Alchemical'])
-GEOMETRIC_SHAPES_EXTENDED = UnicodeBlock(name='Geometric Shapes Extended', start=0x1f780, end=0x1f7ff, assigned_ranges=[(0x1f780, 0x1f7d9), (0x1f7e0, 0x1f7eb), (0x1f7f0, 0x1f7f0)], aliases=['Geometric_Shapes_Ext'])
+GEOMETRIC_SHAPES_EXTENDED = UnicodeBlock(name='Geometric Shapes Extended', start=0x1f780, end=0x1f7ff, assigned_ranges=[(0x1f780, 0x1f7db), (0x1f7e0, 0x1f7eb), (0x1f7f0, 0x1f7ff)], aliases=['Geometric_Shapes_Ext'])
 SUPPLEMENTAL_ARROWS_C = UnicodeBlock(name='Supplemental Arrows-C', start=0x1f800, end=0x1f8ff, assigned_ranges=[(0x1f800, 0x1f80b), (0x1f810, 0x1f847), (0x1f850, 0x1f859), (0x1f860, 0x1f887), (0x1f890, 0x1f8ad), (0x1f8b0, 0x1f8bb), (0x1f8c0, 0x1f8c1), (0x1f8d0, 0x1f8d8)], aliases=['Sup_Arrows_C'])
 SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS = UnicodeBlock(name='Supplemental Symbols and Pictographs', start=0x1f900, end=0x1f9ff, assigned_ranges=[(0x1f900, 0x1f9ff)], aliases=['Sup_Symbols_And_Pictographs'])
 CHESS_SYMBOLS = UnicodeBlock(name='Chess Symbols', start=0x1fa00, end=0x1fa6f, assigned_ranges=[(0x1fa00, 0x1fa57), (0x1fa60, 0x1fa6d)])
-SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A = UnicodeBlock(name='Symbols and Pictographs Extended-A', start=0x1fa70, end=0x1faff, assigned_ranges=[(0x1fa70, 0x1fa7c), (0x1fa80, 0x1fa8a), (0x1fa8e, 0x1fac6), (0x1fac8, 0x1fac8), (0x1facd, 0x1fadc), (0x1fadf, 0x1faea), (0x1faef, 0x1faf8)], aliases=['Symbols_And_Pictographs_Ext_A'])
+SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A = UnicodeBlock(name='Symbols and Pictographs Extended-A', start=0x1fa70, end=0x1faff, assigned_ranges=[(0x1fa70, 0x1fa7c), (0x1fa80, 0x1fac6), (0x1fac8, 0x1fac8), (0x1facc, 0x1fadd), (0x1fadf, 0x1faeb), (0x1faef, 0x1fafa)], aliases=['Symbols_And_Pictographs_Ext_A'])
 SYMBOLS_FOR_LEGACY_COMPUTING = UnicodeBlock(name='Symbols for Legacy Computing', start=0x1fb00, end=0x1fbff, assigned_ranges=[(0x1fb00, 0x1fb92), (0x1fb94, 0x1fbfa)])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B = UnicodeBlock(name='CJK Unified Ideographs Extension B', start=0x20000, end=0x2a6df, assigned_ranges=[(0x20000, 0x2a6df)], aliases=['CJK_Ext_B'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C = UnicodeBlock(name='CJK Unified Ideographs Extension C', start=0x2a700, end=0x2b73f, assigned_ranges=[(0x2a700, 0x2b73f)], aliases=['CJK_Ext_C'])
-CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D = UnicodeBlock(name='CJK Unified Ideographs Extension D', start=0x2b740, end=0x2b81f, assigned_ranges=[(0x2b740, 0x2b81d)], aliases=['CJK_Ext_D'])
+CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D = UnicodeBlock(name='CJK Unified Ideographs Extension D', start=0x2b740, end=0x2b81f, assigned_ranges=[(0x2b740, 0x2b81e)], aliases=['CJK_Ext_D'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E = UnicodeBlock(name='CJK Unified Ideographs Extension E', start=0x2b820, end=0x2ceaf, assigned_ranges=[(0x2b820, 0x2cead)], aliases=['CJK_Ext_E'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F = UnicodeBlock(name='CJK Unified Ideographs Extension F', start=0x2ceb0, end=0x2ebef, assigned_ranges=[(0x2ceb0, 0x2ebe0)], aliases=['CJK_Ext_F'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I = UnicodeBlock(name='CJK Unified Ideographs Extension I', start=0x2ebf0, end=0x2ee5f, assigned_ranges=[(0x2ebf0, 0x2ee5d)], aliases=['CJK_Ext_I'])
@@ -349,6 +355,7 @@ CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT = UnicodeBlock(name='CJK Compatibility I
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G = UnicodeBlock(name='CJK Unified Ideographs Extension G', start=0x30000, end=0x3134f, assigned_ranges=[(0x30000, 0x3134a)], aliases=['CJK_Ext_G'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H = UnicodeBlock(name='CJK Unified Ideographs Extension H', start=0x31350, end=0x323af, assigned_ranges=[(0x31350, 0x323af)], aliases=['CJK_Ext_H'])
 CJK_UNIFIED_IDEOGRAPHS_EXTENSION_J = UnicodeBlock(name='CJK Unified Ideographs Extension J', start=0x323b0, end=0x3347f, assigned_ranges=[(0x323b0, 0x33479)], aliases=['CJK_Ext_J'])
+SEAL = UnicodeBlock(name='Seal', start=0x3d000, end=0x3fc3f, assigned_ranges=[(0x3d000, 0x3fc3f)])
 TAGS = UnicodeBlock(name='Tags', start=0xe0000, end=0xe007f, assigned_ranges=[(0xe0001, 0xe0001), (0xe0020, 0xe007f)])
 VARIATION_SELECTORS_SUPPLEMENT = UnicodeBlock(name='Variation Selectors Supplement', start=0xe0100, end=0xe01ef, assigned_ranges=[(0xe0100, 0xe01ef)], aliases=['VS_Sup'])
 SUPPLEMENTARY_PRIVATE_USE_AREA_A = UnicodeBlock(name='Supplementary Private Use Area-A', start=0xf0000, end=0xfffff, assigned_ranges=[(0xf0000, 0xffffd)], aliases=['Sup_PUA_A'])
@@ -609,6 +616,7 @@ ALL_BLOCKS = [
     MASARAM_GONDI,
     GUNJALA_GONDI,
     TOLONG_SIKI,
+    BENGALI_SUPPLEMENT,
     MAKASAR,
     KAWI,
     LISU_SUPPLEMENT,
@@ -616,6 +624,7 @@ ALL_BLOCKS = [
     CUNEIFORM,
     CUNEIFORM_NUMBERS_AND_PUNCTUATION,
     EARLY_DYNASTIC_CUNEIFORM,
+    ARCHAIC_CUNEIFORM_NUMERALS,
     CYPRO_MINOAN,
     EGYPTIAN_HIEROGLYPHS,
     EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS,
@@ -637,6 +646,8 @@ ALL_BLOCKS = [
     KHITAN_SMALL_SCRIPT,
     TANGUT_SUPPLEMENT,
     TANGUT_COMPONENTS_SUPPLEMENT,
+    JURCHEN,
+    JURCHEN_RADICALS,
     KANA_EXTENDED_B,
     KANA_SUPPLEMENT,
     KANA_EXTENDED_A,
@@ -650,12 +661,14 @@ ALL_BLOCKS = [
     BYZANTINE_MUSICAL_SYMBOLS,
     MUSICAL_SYMBOLS,
     ANCIENT_GREEK_MUSICAL_NOTATION,
+    MUSICAL_SYMBOLS_SUPPLEMENT,
     KAKTOVIK_NUMERALS,
     MAYAN_NUMERALS,
     TAI_XUAN_JING_SYMBOLS,
     COUNTING_ROD_NUMERALS,
     MATHEMATICAL_ALPHANUMERIC_SYMBOLS,
     SUTTON_SIGNWRITING,
+    MISCELLANEOUS_SYMBOLS_AND_ARROWS_EXTENDED,
     LATIN_EXTENDED_G,
     GLAGOLITIC_SUPPLEMENT,
     CYRILLIC_EXTENDED_D,
@@ -697,6 +710,7 @@ ALL_BLOCKS = [
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_J,
+    SEAL,
     TAGS,
     VARIATION_SELECTORS_SUPPLEMENT,
     SUPPLEMENTARY_PRIVATE_USE_AREA_A,
